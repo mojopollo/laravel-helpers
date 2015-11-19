@@ -1,0 +1,27 @@
+{
+    "name": "mojopollo/laravel-helpers",
+    "description": "Mojo's Laravel Helpers: A suite of various helpers for use in Laravel 5.0 / 5.1 / Composer",
+    "keywords": ["mojopollo", "mojo", "laravel", "helpers", "helper"],
+    "homepage": "http://localhost",
+    "license" : "MIT",
+    "authors": [
+        {
+            "name": "Jaime Medina",
+            "email": "jmedina@qujo.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": ">=4.2.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "4.7.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Mojopollo\\Helpers\\": "src"
+        }
+    },
+    "minimum-stability": "stable"
+}
