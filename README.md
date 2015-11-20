@@ -2,6 +2,11 @@
 Mojo's Laravel Helpers
 ========================
 
+[![Latest Stable Version](https://poser.pugx.org/mojopollo/laravel-helpers/v/stable)](https://packagist.org/packages/mojopollo/laravel-helpers)
+[![Latest Unstable Version](https://poser.pugx.org/mojopollo/laravel-helpers/v/unstable)](https://packagist.org/packages/mojopollo/laravel-helpers)
+[![License](https://poser.pugx.org/mojopollo/laravel-helpers/license)](https://packagist.org/packages/mojopollo/laravel-helpers)
+[![Total Downloads](https://poser.pugx.org/mojopollo/laravel-helpers/downloads)](https://packagist.org/packages/mojopollo/laravel-helpers)
+
 - [About](#about)
 - [Installation](#installation)
 
@@ -15,9 +20,12 @@ Some of these helpers are based on code found in Stackoverflow, look for the @se
 
 #### Step 1: Composer
 
-Add this package to your `composer.json` file:
+Add this package to your `composer.json` file
 
-  composer require mojopollo/laravel-helpers --save
+`composer require mojopollo/laravel-helpers`
 
 Next, run the `composer update` command.
 
+#### Step 2: Update laravel 5 `providers` and `aliases` arrays
+ * Add `Mojopollo\Helpers\StringServiceProvider::class` to your `config/app.php` within the `providers` array.
+ * Add `'MojoString' => 'Mojopollo\Helpers\Facades\String::class'` to your `config/app.php` configuration file within the `aliases` array.
