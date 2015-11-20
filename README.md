@@ -10,6 +10,7 @@ Mojo's Laravel Helpers
 
 - [About](#about)
 - [Installation](#installation)
+- [Usage](#usage)
 
 <a id="about"></a>
 ## About
@@ -29,4 +30,11 @@ Next, run the `composer update` command.
 
 #### Step 2: Update laravel 5 `providers` and `aliases` arrays
  * Add `Mojopollo\Helpers\StringServiceProvider::class` to your `config/app.php` within the `providers` array.
- * Add `'MojoString' => 'Mojopollo\Helpers\Facades\String::class'` to your `config/app.php` configuration file within the `aliases` array.
+ * Add `'MojoString' => Mojopollo\Helpers\Facades\String::class` to your `config/app.php` configuration file within the `aliases` array.
+
+<a id="usage"></a>
+## Usage
+You can now call any of helper methods via their facades like so:
+`MojoString::replaceFirstMatch('one two three four five six', 3)`
+returns
+`one two three`
