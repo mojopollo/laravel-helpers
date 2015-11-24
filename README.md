@@ -12,6 +12,8 @@ Mojo's Laravel Helpers
 - [Installation](#installation)
 - [Usage](#usage)
 
+- [DateTime](#helper-datetime)
+
 <a id="about"></a>
 ## About
 Mojo's Laravel Helpers: A suite of various helpers for the [Laravel framework](https://github.com/laravel/laravel).
@@ -34,7 +36,10 @@ Next, run the `composer update` command.
 
 <a id="usage"></a>
 ## Usage
-You can now call any of helper methods via their facades like so:
+You can now call any of helper methods via their facades:
+
 `MojoString::replaceFirstMatch('one two three four five six', 3)`
-returns
-`one two three`
+
+
+<a id="helper-datetime"></a>
+## DateTime Helpers
