@@ -11,8 +11,7 @@ Mojo's Laravel Helpers
 - [About](#about)
 - [Installation](#installation)
 - [Usage](#usage)
-
-- [Fule](#helper-file)
+- [Helpers: Files & Directories](#helper-file)
 
 <a id="about"></a>
 ## About
