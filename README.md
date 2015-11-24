@@ -11,6 +11,7 @@ Mojo's Laravel Helpers
 - [About](#about)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Helpers: Files & Directories](#helper-file)
 
 <a id="about"></a>
 ## About
@@ -34,7 +35,20 @@ Next, run the `composer update` command.
 
 <a id="usage"></a>
 ## Usage
-You can now call any of helper methods via their facades like so:
+You can now call any of helper methods via their facades:
+
 `MojoString::replaceFirstMatch('one two three four five six', 3)`
-returns
-`one two three`
+
+
+<a id="helper-file"></a>
+## Files & Directories
+ * Add `Mojopollo\Helpers\FileServiceProvider::class` to your `config/app.php` within the `providers` array.
+ * Add `'MojoFile' => Mojopollo\Helpers\Facades\File::class` to your `config/app.php` configuration file within the `aliases` array.
+
+#### directoryFiles
+
+```php
+$array = MojoFile::directoryFiles('/directory-path');
+
+// ['/directory-path/file1.txt', '/directory-path/file2.txt', '/directory-path/subdirectory/file3.txt']
+```
