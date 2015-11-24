@@ -42,11 +42,13 @@ You can now call any of helper methods via their facades:
 
 <a id="helper-file"></a>
 ## File Helpers
+ * Add `Mojopollo\Helpers\FileServiceProvider::class` to your `config/app.php` within the `providers` array.
+ * Add `'MojoFile' => Mojopollo\Helpers\Facades\File::class` to your `config/app.php` configuration file within the `aliases` array.
 
 #### directoryFiles
 
 ```php
-$array = directoryFiles('/directory-path');
+$array = MojoFile::directoryFiles('/directory-path');
 
 // ['/directory-path/file1.txt', '/directory-path/file2.txt', '/directory-path/subdirectory/file3.txt']
 ```
