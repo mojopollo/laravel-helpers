@@ -11,8 +11,8 @@ Mojo's Laravel Helpers
 - [About](#about)
 - [Installation](#installation)
 - [Usage](#usage)
-
-- [DateTime](#helper-datetime)
+- [Helpers: Date & Time](#helper-datetime)
+- [Helpers: Files & Directories](#helper-file)
 
 <a id="about"></a>
 ## About
@@ -42,4 +42,28 @@ You can now call any of helper methods via their facades:
 
 
 <a id="helper-datetime"></a>
-## DateTime Helpers
+## Date & Time
+ * Add `Mojopollo\Helpers\DateTimeServiceProvider::class` to your `config/app.php` within the `providers` array.
+ * Add `'MojoDateTime' => Mojopollo\Helpers\Facades\DateTime::class` to your `config/app.php` configuration file within the `aliases` array.
+
+#### directoryFiles
+
+```php
+$array = MojoFile::directoryFiles('/directory-path');
+
+// ['/directory-path/file1.txt', '/directory-path/file2.txt', '/directory-path/subdirectory/file3.txt']
+```
+
+
+<a id="helper-file"></a>
+## Files & Directories
+ * Add `Mojopollo\Helpers\FileServiceProvider::class` to your `config/app.php` within the `providers` array.
+ * Add `'MojoFile' => Mojopollo\Helpers\Facades\File::class` to your `config/app.php` configuration file within the `aliases` array.
+
+#### directoryFiles
+
+```php
+$array = MojoFile::directoryFiles('/directory-path');
+
+// ['/directory-path/file1.txt', '/directory-path/file2.txt', '/directory-path/subdirectory/file3.txt']
+```
