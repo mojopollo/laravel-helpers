@@ -8,7 +8,7 @@ interface StringInterface
    * @param  string  $value
    * @return string
    */
-  function camelCase($value);
+  public static function camelCase($value);
 
   /**
    * Convert a string to snake case.
@@ -17,7 +17,7 @@ interface StringInterface
    * @param  string  $delimiter
    * @return string
    */
-  function snakeCase($value, $delimiter = '_');
+  public static function snakeCase($value, $delimiter = '_');
 
   /**
   * str_replace() for replacing just the first match in a string search
@@ -29,7 +29,7 @@ interface StringInterface
   * @param  string $subject  The original string to be searched against
   * @return string           Returns modified $subject OR returns original $subject when no match is found
   */
-  public function replaceFirstMatch($search, $replace, $subject);
+  public static function replaceFirstMatch($search, $replace, $subject);
 
   /**
    * Returns a string limited by the word count specified
@@ -40,5 +40,5 @@ interface StringInterface
    * @param  integer $wordCount  amount to wordCount paragraph to
    * @return string              string with int limitation set
    */
-  public function limitByWords($str, $wordCount = 10);
+  public static function limitByWords($str, $wordCount = 10);
 }
