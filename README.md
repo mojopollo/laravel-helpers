@@ -11,6 +11,7 @@ Mojo's Laravel Helpers
 - [About](#about)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Helpers: String](#helper-string)
 - [Helpers: Date & Time](#helper-datetime)
 - [Helpers: Files & Directories](#helper-file)
 
@@ -40,19 +41,63 @@ You can now call any of helper methods via their facades:
 
 `MojoString::replaceFirstMatch('one two three four five six', 3)`
 
+`MojoFile::directoryFiles('/directory-path')`
+
+`...`
+
+<a id="helper-file"></a>
+## String
+ * Add `Mojopollo\Helpers\StringServiceProvider::class` to your `config/app.php` within the `providers` array.
+ * Add `'MojoString' => Mojopollo\Helpers\Facades\String::class` to your `config/app.php` configuration file within the `aliases` array.
+
+#### camelCase
+
+```php
+string camelCase(string $value)
+```
+```php
+MojoString::camelCase('mojo_pollo');
+
+// mojoPollo
+```
+
+#### snakeCase
+
+```php
+string snakeCase(string $value [, string $delimiter = '_'])
+```
+```php
+MojoString::snakeCase('mojoPollo');
+
+// mojo_pollo
+```
+
+#### replaceFirstMatch
+
+```php
+string replaceFirstMatch(string $search, string $replace, string $subject)
+```
+```php
+MojoString::replaceFirstMatch('mojo', 'jojo', 'mojo is a pollo and mojo');
+
+// jojo is a pollo and mojo
+```
+
+#### testLimitByWords
+
+```php
+string testLimitByWords(string $str [, int $wordCount = 10])
+```
+```php
+MojoString::testLimitByWords('one two three four five six', 3);
+
+// one two three
+```
 
 <a id="helper-datetime"></a>
 ## Date & Time
  * Add `Mojopollo\Helpers\DateTimeServiceProvider::class` to your `config/app.php` within the `providers` array.
  * Add `'MojoDateTime' => Mojopollo\Helpers\Facades\DateTime::class` to your `config/app.php` configuration file within the `aliases` array.
-
-#### directoryFiles
-
-```php
-$array = MojoFile::directoryFiles('/directory-path');
-
-// ['/directory-path/file1.txt', '/directory-path/file2.txt', '/directory-path/subdirectory/file3.txt']
-```
 
 
 <a id="helper-file"></a>
@@ -63,7 +108,10 @@ $array = MojoFile::directoryFiles('/directory-path');
 #### directoryFiles
 
 ```php
-$array = MojoFile::directoryFiles('/directory-path');
+array directoryFiles(string $path)
+```
+```php
+MojoFile::directoryFiles('/directory-path');
 
 // ['/directory-path/file1.txt', '/directory-path/file2.txt', '/directory-path/subdirectory/file3.txt']
 ```
