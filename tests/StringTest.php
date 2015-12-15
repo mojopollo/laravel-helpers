@@ -30,7 +30,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
     // Parent teardown
     parent::tearDown();
 
-    // Unset GoogleApisHelper class
+    // Unset string class
     $this->string = null;
   }
 

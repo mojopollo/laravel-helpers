@@ -12,6 +12,7 @@ Mojo's Laravel Helpers
 - [Installation](#installation)
 - [Usage](#usage)
 - [Helpers: String](#helper-string)
+- [Helpers: Array](#helper-array)
 - [Helpers: Date & Time](#helper-datetime)
 - [Helpers: Files & Directories](#helper-file)
 
@@ -45,7 +46,7 @@ You can now call any of helper methods via their facades:
 
 `...`
 
-<a id="helper-file"></a>
+<a id="helper-string"></a>
 ## String
  * Add `Mojopollo\Helpers\StringServiceProvider::class` to your `config/app.php` within the `providers` array.
  * Add `'MojoString' => Mojopollo\Helpers\Facades\String::class` to your `config/app.php` configuration file within the `aliases` array.
@@ -92,6 +93,22 @@ string testLimitByWords(string $str [, int $wordCount = 10])
 MojoString::testLimitByWords('one two three four five six', 3);
 
 // one two three
+```
+
+<a id="helper-array"></a>
+## Array
+ * Add `Mojopollo\Helpers\ArrServiceProvider::class` to your `config/app.php` within the `providers` array.
+ * Add `'MojoArray' => Mojopollo\Helpers\Facades\Arr::class` to your `config/app.php` configuration file within the `aliases` array.
+
+#### randomElement
+
+```php
+mixed randomElement(array $array)
+```
+```php
+MojoArray::randomElement(['one', 'two', 'three']);
+
+// two
 ```
 
 <a id="helper-datetime"></a>
