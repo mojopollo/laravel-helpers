@@ -35,6 +35,44 @@ class StringTest extends \PHPUnit_Framework_TestCase
   }
 
   /**
+   * Test that words camelize
+   * @return void
+   */
+  public function testCamelCase()
+  {
+    // Original text
+    $original = 'mojo_pollo';
+
+    // Convert to camel
+    $result = $this->string->camelCase($original);
+
+    // Expected string
+    $expected = 'mojoPollo';
+
+    // Test
+    $this->assertEquals($result, $expected);
+  }
+
+  /**
+   * Test that words snakecase
+   * @return void
+   */
+  public function testSnakeCase()
+  {
+    // Original text
+    $original = 'mojoPollo';
+
+    // Convert to camel
+    $result = $this->string->snakeCase($original);
+
+    // Expected string
+    $expected = 'mojo_pollo';
+
+    // Test
+    $this->assertEquals($result, $expected);
+  }
+
+  /**
    * Test that only the first match is replaced and not subsequent others
    *
    * @return void
