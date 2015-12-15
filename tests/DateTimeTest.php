@@ -18,6 +18,9 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
     // Parent setup
     parent::SetUp();
 
+    // Set timezone to UTC
+    date_default_timezone_set('UTC');
+
     // Set string class
     $this->dateTime = new DateTime;
   }
@@ -35,23 +38,14 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
   }
 
   /**
-   * Test that only the first match is replaced and not subsequent others
+   * Temp placeholder
    *
    * @return void
    */
-  public function testReplaceFirstMatch()
+  public function testInitial()
   {
-    // Original sentence
-    $original = 'mojo is a pollo and mojo';
-
-    // Replace "mojo" with "jojo"
-    $result = $this->string->replaceFirstMatch('mojo', 'jojo', $original);
-
-    // Expected modified sentence
-    $expected = 'jojo is a pollo and mojo';
-
     // Test
-    $this->assertEquals($result, $expected);
+    $this->assertTrue(true);
   }
 
 }
