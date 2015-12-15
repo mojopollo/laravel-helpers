@@ -1,7 +1,31 @@
 <?php namespace Mojopollo\Helpers;
 
+use Illuminate\Support\Str;
+
 class String implements StringInterface
 {
+  /**
+   * Convert a value to camel case.
+   *
+   * @param  string  $value
+   * @return string
+   */
+  function camelCase($value)
+  {
+    return Str::camel($value);
+  }
+
+  /**
+   * Convert a string to snake case.
+   *
+   * @param  string  $value
+   * @param  string  $delimiter
+   * @return string
+   */
+  function snakeCase($value, $delimiter = '_')
+  {
+    return Str::snake($value, $delimiter);
+  }
 
   /**
    * str_replace() for replacing just the first match in a string search

@@ -2,6 +2,22 @@
 
 interface StringInterface
 {
+  /**
+   * Convert a value to camel case.
+   *
+   * @param  string  $value
+   * @return string
+   */
+  function camelCase($value);
+
+  /**
+   * Convert a string to snake case.
+   *
+   * @param  string  $value
+   * @param  string  $delimiter
+   * @return string
+   */
+  function snakeCase($value, $delimiter = '_');
 
   /**
   * str_replace() for replacing just the first match in a string search
