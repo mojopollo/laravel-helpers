@@ -1,7 +1,7 @@
 <?php namespace Mojopollo\Helpers;
 
 use Illuminate\Support\Arr as IlluminateArr;
-use String;
+use Mojopollo\Helpers\String;
 
 class Arr implements ArrInterface
 {
@@ -11,7 +11,7 @@ class Arr implements ArrInterface
    * @param  array $array the source array
    * @return mixed        one of the elements of the array
    */
-  public function randomElement(Array $array)
+  public static function randomElement(Array $array)
   {
     // Get random index
     $index = rand(0, count($array) - 1);
@@ -27,7 +27,7 @@ class Arr implements ArrInterface
    * @param  string $morphTo        camel | snake
    * @return array                  the final array with the camielize keys
    */
-  public function morphArrayKeys($originalArray, $morphTo = 'camel')
+  public static function morphArrayKeys($originalArray, $morphTo = 'camel')
   {
     // New array with the morphed keys
     $newArray = [];
@@ -46,12 +46,12 @@ class Arr implements ArrInterface
 
         // Camel case
         case 'camel':
-          $newKey = camel_case($key);
+          $newKey = String::camelCase($key);
         break 1;
 
         // Snake case
         case 'snake':
-          $newKey = snake_case($key);
+          $newKey = String::snakeCase($key);
         break 1;
       }
 
@@ -69,7 +69,7 @@ class Arr implements ArrInterface
    * @param  array $originalArray the source array
    * @return array                the modified array
    */
-  public function castValues(Array $originalArray)
+  public static function castValues(Array $originalArray)
   {
     // Convert booleans and integers
     foreach ($originalArray as $key => $value) {
