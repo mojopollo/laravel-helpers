@@ -32,8 +32,8 @@ Add this package to your `composer.json` file
 Next, run the `composer update` command.
 
 #### Step 2: Update laravel 5 `providers` and `aliases` arrays
- * Add `Mojopollo\Helpers\StringServiceProvider::class` to your `config/app.php` within the `providers` array.
- * Add `'MojoString' => Mojopollo\Helpers\Facades\String::class` to your `config/app.php` configuration file within the `aliases` array.
+ * Each class has its own unique `providers` and `aliases` entries that need to be added to your `config/app.php` file.
+ * These are noted under their prespective classes below.
 
 <a id="usage"></a>
 ## Usage
