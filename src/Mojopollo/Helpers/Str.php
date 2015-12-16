@@ -1,8 +1,8 @@
 <?php namespace Mojopollo\Helpers;
 
-use Illuminate\Support\Str;
+use Illuminate\Support\Str as IlluminateStr;
 
-class String implements StringInterface
+class Str implements StrInterface
 {
   /**
    * Convert a value to camel case.
@@ -12,7 +12,7 @@ class String implements StringInterface
    */
   public static function camelCase($value)
   {
-    return Str::camel($value);
+    return IlluminateStr::camel($value);
   }
 
   /**
@@ -24,7 +24,7 @@ class String implements StringInterface
    */
   public static function snakeCase($value, $delimiter = '_')
   {
-    return Str::snake($value, $delimiter);
+    return IlluminateStr::snake($value, $delimiter);
   }
 
   /**
