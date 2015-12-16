@@ -122,4 +122,34 @@ class ArrTest extends \PHPUnit_Framework_TestCase
     ], JSON_UNESCAPED_SLASHES));
   }
 
+  /**
+   * Test castValues()
+   *
+   * @return void
+   */
+  public function testCastValues()
+  {
+    // Set parameters
+    $originalArray = [
+      'value1' => 'true',
+      'value2' => 'false',
+      'value3' => '123',
+      'value4' => '{"mojo": "pollo"}',
+    ];
+
+    // Execute method
+    $result = $this->arr->castValues($originalArray);
+
+    // Expected result
+    $resultArray = [
+      'value1' => true,
+      'value2' => false,
+      'value3' => 123,
+      'value4' => ['mojo' => 'pollo'],
+    ];
+
+    // Check result
+    $this->assertEquals($result, $resultArray);
+  }
+
 }

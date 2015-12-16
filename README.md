@@ -136,6 +136,27 @@ MojoArray::morphArrayKeys([
 // ]
 ```
 
+#### castValues
+
+```php
+array castValues(array $originalArray)
+```
+```php
+MojoArray::castValues([
+  'value1' => 'true',
+  'value2' => 'false',
+  'value3' => '123',
+  'value4' => '{"mojo": "pollo"}',
+]);
+
+// [
+//   'value1' => true,
+//   'value2' => false,
+//   'value3' => 123,
+//   'value4' => ['mojo' => 'pollo'],
+// ]
+```
+
 <a id="helper-datetime"></a>
 ## Date & Time
  * Add `Mojopollo\Helpers\DateTimeServiceProvider::class` to your `config/app.php` within the `providers` array.
