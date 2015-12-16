@@ -11,4 +11,4 @@ before_script:
   - composer install --dev
   - composer update -o
 
-script: phpunit --bootstrap tests/bootstrap.php --configuration phpunit.xml tests
+script: phpunit --debug --bootstrap tests/bootstrap.php --configuration phpunit.xml tests
