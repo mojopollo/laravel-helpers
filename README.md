@@ -42,15 +42,15 @@ Add the following entries into the `providers` array in the `config/app.php` fil
 
 Add the following entries into the `aliases` array in the `config/app.php` file:
 ```php
-  'StringHelper' => Mojopollo\Helpers\Facades\String::class,
-  'ArrayHelper' => Mojopollo\Helpers\Facades\Arr::class,
+  'StringHelper'   => Mojopollo\Helpers\Facades\String::class,
+  'ArrayHelper'    => Mojopollo\Helpers\Facades\Arr::class,
   'DateTimeHelper' => Mojopollo\Helpers\Facades\DateTime::class,
-  'FileHelper' => Mojopollo\Helpers\Facades\File::class,
+  'FileHelper'     => Mojopollo\Helpers\Facades\File::class,
 ```
 
 <a id="usage"></a>
 ## Usage
-To you use any helper class inside a controller for example you would add the following:
+To enable any of the helpers classes inside a controller, invoke the `use` keyword:
 
 ```php
 <?php namespace App\Http\Controllers;
@@ -66,6 +66,16 @@ You can now call any of helper methods via their facades:
 StringHelper::replaceFirstMatch('one two three four five six', 3)
 
 FileHelper::directoryFiles('/directory-path')
+
+...
+```
+
+If you do not want to utilize the `use` keyword, you can alternatively use a blackslash`\` when calling the helpers:
+
+```php
+\StringHelper::replaceFirstMatch('one two three four five six', 3)
+
+\FileHelper::directoryFiles('/directory-path')
 
 ...
 ```
