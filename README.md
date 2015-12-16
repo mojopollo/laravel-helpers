@@ -30,22 +30,22 @@ Add this package to your `composer.json` file with the following command
 composer require mojopollo/laravel-helpers
 ```
 
-#### Step 2: Update laravel 5 `providers` and `aliases` arrays
+#### Step 2: Update laravel 5.x `config/app.php` file
 
-Add the following entries into the `providers` array in the `config/app.php` file:
+Add the following into the `providers` array:
 ```php
-  Mojopollo\Helpers\StringServiceProvider::class,
-  Mojopollo\Helpers\ArrServiceProvider::class,
-  Mojopollo\Helpers\DateTimeServiceProvider::class,
-  Mojopollo\Helpers\FileServiceProvider::class,
+Mojopollo\Helpers\StringServiceProvider::class,
+Mojopollo\Helpers\ArrServiceProvider::class,
+Mojopollo\Helpers\DateTimeServiceProvider::class,
+Mojopollo\Helpers\FileServiceProvider::class,
 ```
 
-Add the following entries into the `aliases` array in the `config/app.php` file:
+Add the following into the `aliases` array:
 ```php
-  'StringHelper'   => Mojopollo\Helpers\Facades\String::class,
-  'ArrayHelper'    => Mojopollo\Helpers\Facades\Arr::class,
-  'DateTimeHelper' => Mojopollo\Helpers\Facades\DateTime::class,
-  'FileHelper'     => Mojopollo\Helpers\Facades\File::class,
+'StringHelper'   => Mojopollo\Helpers\Facades\String::class,
+'ArrayHelper'    => Mojopollo\Helpers\Facades\Arr::class,
+'DateTimeHelper' => Mojopollo\Helpers\Facades\DateTime::class,
+'FileHelper'     => Mojopollo\Helpers\Facades\File::class,
 ```
 
 <a id="usage"></a>
@@ -81,7 +81,7 @@ If you do not want to utilize the `use` keyword, you can alternatively use a bla
 ```
 
 <a id="helper-string"></a>
-## String
+## StringHelper
 
 #### camelCase
 
@@ -128,7 +128,7 @@ StringHelper::testLimitByWords('one two three four five six', 3);
 ```
 
 <a id="helper-array"></a>
-## Array
+## ArrayHelper
 
 #### randomElement
 
@@ -254,11 +254,11 @@ ArrayHelper::sortByPriority($originalArray, $priority);
 ```
 
 <a id="helper-datetime"></a>
-## Date & Time
+## DateTimeHelper
 
 
 <a id="helper-file"></a>
-## Files & Directories
+## FileHelper
 
 #### directoryFiles
 
