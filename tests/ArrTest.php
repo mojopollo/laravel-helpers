@@ -141,7 +141,7 @@ class ArrTest extends \PHPUnit_Framework_TestCase
     $result = $this->arr->castValues($originalArray);
 
     // Expected result
-    $resultArray = [
+    $expectedArray = [
       'value1' => true,
       'value2' => false,
       'value3' => 123,
@@ -149,7 +149,79 @@ class ArrTest extends \PHPUnit_Framework_TestCase
     ];
 
     // Check result
-    $this->assertEquals($result, $resultArray);
+    $this->assertEquals($result, $expectedArray);
+  }
+
+  /**
+   * Test sortByPriority()
+   *
+   * @return void
+   */
+  public function testSortByPriority()
+  {
+    // Original array
+    $originalArray = [
+      [
+        'name' => 'White Castle',
+        'city' => 'Las Vegas',
+        'zip' => '89109',
+      ],
+      [
+        'name' => 'Burger Town',
+        'city' => 'Sherman Oaks',
+        'zip' => '91403',
+      ],
+      [
+        'name' => 'Krabby Patty',
+        'city' => 'Walking the Plankton',
+        'zip' => '00000',
+      ],
+      [
+        'name' => 'Uber Burger',
+        'city' => 'Little Rock',
+        'zip' => '72201',
+      ],
+    ];
+
+    // Priority array
+    $priority = [
+      [
+        'city' => 'Walking the Plankton'
+      ],
+      [
+        'name' => 'Burger Town'
+      ],
+    ];
+
+    // Execute method
+    $result = $this->arr->sortByPriority($originalArray, $priority);
+
+    // Expected result
+    $expectedArray = [
+      [
+        'name' => 'Krabby Patty',
+        'city' => 'Walking the Plankton',
+        'zip' => '00000',
+      ],
+      [
+        'name' => 'Burger Town',
+        'city' => 'Sherman Oaks',
+        'zip' => '91403',
+      ],
+      [
+        'name' => 'White Castle',
+        'city' => 'Las Vegas',
+        'zip' => '89109',
+      ],
+      [
+        'name' => 'Uber Burger',
+        'city' => 'Little Rock',
+        'zip' => '72201',
+      ],
+    ];
+
+    // Check result
+    $this->assertEquals($result, $expectedArray);
   }
 
 }

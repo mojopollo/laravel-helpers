@@ -100,4 +100,47 @@ class Arr implements ArrInterface
     // Return modfied array
     return $originalArray;
   }
+
+  /**
+   * Re-orders an array by moving elements to the top of the array based
+   * on a pre-defined array stating which elementss to move
+   *
+   * @param  Array  $originalArray The array thats to be re-ordered
+   * @param  Array  $priority      The array that contains which
+   * @return Array                 The final re-ordered array
+   */
+  public static function sortByPriority(Array $originalArray, Array $priority)
+  {
+    // The priority array
+    $priorityArray = [];
+
+    // For each priority array index
+    foreach ($priority as $priorityElement) {
+
+      // Get priority key and valye
+      foreach ($priorityElement as $priorityKey => $priorityValue) {
+
+        // Now scan the original array
+        foreach ($originalArray as $originalElementKey => $originalElement) {
+
+          // Get original key and valye
+          foreach ($originalElement as $originalKey => $originalValue) {
+
+            // If keys and values match exactly
+            if ($priorityKey === $originalKey && $priorityValue === $originalValue) {
+
+              // Add to priority array
+              $priorityArray[] = $originalElement;
+
+              // Unset this element from original array
+              unset($originalArray[$originalElementKey]);
+            }
+          }
+        }
+      }
+    }
+
+    // Merge both the priority and original arrays with priority on top
+    return array_merge($priorityArray, $originalArray);
+  }
 }
