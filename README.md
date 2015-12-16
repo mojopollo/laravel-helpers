@@ -9,7 +9,7 @@ Mojo's Laravel Helpers
 [![Total Downloads](https://poser.pugx.org/mojopollo/laravel-helpers/downloads)](https://packagist.org/packages/mojopollo/laravel-helpers)
 
 
-Mojo's Laravel Helpers: A suite of various complimentary helpers for the [Laravel framework](https://github.com/laravel/laravel).
+Mojo's Laravel Helpers: A suite of various complimentary helpers for the [Laravel framework](https://github.com/laravel/laravel) and PHP 5.4/5.5/5.6/7.0.
 Some of these helpers are based on code found in Stackoverflow, look for the @see properties for references.
 
 - [Installation](#installation)
