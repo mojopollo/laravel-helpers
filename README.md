@@ -157,6 +157,72 @@ MojoArray::castValues([
 // ]
 ```
 
+#### sortByPriority
+
+```php
+array sortByPriority(array $originalArray, array $priority)
+```
+```php
+
+$originalArray = [
+  [
+    'name' => 'White Castle',
+    'city' => 'Las Vegas',
+    'zip' => '89109',
+  ],
+  [
+    'name' => 'Burger Town',
+    'city' => 'Sherman Oaks',
+    'zip' => '91403',
+  ],
+  [
+    'name' => 'Krabby Patty',
+    'city' => 'Walking the Plankton',
+    'zip' => '00000',
+  ],
+  [
+    'name' => 'Uber Burger',
+    'city' => 'Little Rock',
+    'zip' => '72201',
+  ],
+];
+
+$priority = [
+  [
+    'city' => 'Walking the Plankton'
+  ],
+  [
+    'name' => 'Burger Town'
+  ],
+];
+
+
+MojoArray::sortByPriority($originalArray, $priority);
+
+// [
+//   [
+//     'name' => 'Krabby Patty',
+//     'city' => 'Walking the Plankton',
+//     'zip' => '00000',
+//   ],
+//   [
+//     'name' => 'Burger Town',
+//     'city' => 'Sherman Oaks',
+//     'zip' => '91403',
+//   ],
+//   [
+//     'name' => 'White Castle',
+//     'city' => 'Las Vegas',
+//     'zip' => '89109',
+//   ],
+//   [
+//     'name' => 'Uber Burger',
+//     'city' => 'Little Rock',
+//     'zip' => '72201',
+//   ],
+// ]
+```
+
 <a id="helper-datetime"></a>
 ## Date & Time
  * Add `Mojopollo\Helpers\DateTimeServiceProvider::class` to your `config/app.php` within the `providers` array.
