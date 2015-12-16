@@ -1,7 +1,7 @@
 <?php namespace Mojopollo\Helpers;
 
 use Illuminate\Support\Arr as IlluminateArr;
-use Mojopollo\Helpers\String;
+use Mojopollo\Helpers\Str;
 
 class Arr implements ArrInterface
 {
@@ -46,12 +46,12 @@ class Arr implements ArrInterface
 
         // Camel case
         case 'camel':
-          $newKey = String::camelCase($key);
+          $newKey = Str::camelCase($key);
         break 1;
 
         // Snake case
         case 'snake':
-          $newKey = String::snakeCase($key);
+          $newKey = Str::snakeCase($key);
         break 1;
       }
 

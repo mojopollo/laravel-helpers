@@ -1,14 +1,14 @@
 <?php
-use Mojopollo\Helpers\String;
+use Mojopollo\Helpers\Str;
 
-class StringTest extends \PHPUnit_Framework_TestCase
+class StrTest extends \PHPUnit_Framework_TestCase
 {
   /**
    * String class object
    *
-   * @var String
+   * @var Str
    */
-  protected $string;
+  protected $str;
 
   /**
    * This will run at the beginning of every test method
@@ -19,7 +19,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
     parent::SetUp();
 
     // Set string class
-    $this->string = new String;
+    $this->str = new Str;
   }
 
   /**
@@ -31,7 +31,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
     parent::tearDown();
 
     // Unset string class
-    $this->string = null;
+    $this->str = null;
   }
 
   /**
@@ -44,7 +44,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
     $original = 'mojo_pollo';
 
     // Convert to camel
-    $result = $this->string->camelCase($original);
+    $result = $this->str->camelCase($original);
 
     // Expected string
     $expected = 'mojoPollo';
@@ -63,7 +63,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
     $original = 'mojoPollo';
 
     // Convert to camel
-    $result = $this->string->snakeCase($original);
+    $result = $this->str->snakeCase($original);
 
     // Expected string
     $expected = 'mojo_pollo';
@@ -83,7 +83,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
     $original = 'mojo is a pollo and mojo';
 
     // Replace "mojo" with "jojo"
-    $result = $this->string->replaceFirstMatch('mojo', 'jojo', $original);
+    $result = $this->str->replaceFirstMatch('mojo', 'jojo', $original);
 
     // Expected modified sentence
     $expected = 'jojo is a pollo and mojo';
@@ -103,7 +103,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
     $original = 'one two three four five six';
 
     // Replace "mojo" with "jojo"
-    $result = $this->string->limitByWords($original, 3);
+    $result = $this->str->limitByWords($original, 3);
 
     // Expected modified sentence
     $expected = 'one two three';
