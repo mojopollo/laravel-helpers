@@ -1,7 +1,31 @@
 <?php namespace Mojopollo\Helpers;
 
+use Illuminate\Support\Str;
+
 class String implements StringInterface
 {
+  /**
+   * Convert a value to camel case.
+   *
+   * @param  string  $value
+   * @return string
+   */
+  public static function camelCase($value)
+  {
+    return Str::camel($value);
+  }
+
+  /**
+   * Convert a string to snake case.
+   *
+   * @param  string  $value
+   * @param  string  $delimiter
+   * @return string
+   */
+  public static function snakeCase($value, $delimiter = '_')
+  {
+    return Str::snake($value, $delimiter);
+  }
 
   /**
    * str_replace() for replacing just the first match in a string search
@@ -13,7 +37,7 @@ class String implements StringInterface
    * @param  string $subject  The original string to be searched against
    * @return string           Returns modified $subject OR returns original $subject when no match is found
    */
-  public function replaceFirstMatch($search, $replace, $subject)
+  public static function replaceFirstMatch($search, $replace, $subject)
   {
     // If we have a match
     $pos = strpos($subject, $search);
@@ -36,7 +60,7 @@ class String implements StringInterface
    * @param  integer $wordCount  amount to wordCount paragraph to
    * @return string              string with int limitation set
    */
-  public function limitByWords($str, $wordCount = 10)
+  public static function limitByWords($str, $wordCount = 10)
   {
     // Reads amount of words in paragraph
     $words = preg_split("/[\s]+/", $str, $wordCount + 1);

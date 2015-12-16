@@ -30,8 +30,46 @@ class StringTest extends \PHPUnit_Framework_TestCase
     // Parent teardown
     parent::tearDown();
 
-    // Unset GoogleApisHelper class
+    // Unset string class
     $this->string = null;
+  }
+
+  /**
+   * Test that words camelize
+   * @return void
+   */
+  public function testCamelCase()
+  {
+    // Original text
+    $original = 'mojo_pollo';
+
+    // Convert to camel
+    $result = $this->string->camelCase($original);
+
+    // Expected string
+    $expected = 'mojoPollo';
+
+    // Test
+    $this->assertEquals($result, $expected);
+  }
+
+  /**
+   * Test that words snakecase
+   * @return void
+   */
+  public function testSnakeCase()
+  {
+    // Original text
+    $original = 'mojoPollo';
+
+    // Convert to camel
+    $result = $this->string->snakeCase($original);
+
+    // Expected string
+    $expected = 'mojo_pollo';
+
+    // Test
+    $this->assertEquals($result, $expected);
   }
 
   /**
