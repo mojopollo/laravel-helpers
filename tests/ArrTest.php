@@ -90,4 +90,36 @@ class ArrTest extends \PHPUnit_Framework_TestCase
     ], JSON_UNESCAPED_SLASHES));
   }
 
+  /**
+   * Test morphArrayKeys() with snake case
+   *
+   * @return void
+   */
+  public function testMorphArrayKeysWithSnake()
+  {
+    // Set parameters
+    $originalArray = [
+      'user' => [
+        'firstName' => 'mojo',
+        'attributes' => [
+          'secondKey' => 'second value',
+        ],
+      ],
+    ];
+    $morphTo = 'snake';
+
+    // Execute method
+    $result = $this->arr->morphArrayKeys($originalArray, $morphTo);
+
+    // Expected result
+    $expectedInfo = 'Keys should be snakecased to first_name and second_key, regardless of multi dimensional array level';
+    $expectedResult = isset($result['user']['first_name']) && isset($result['user']['attributes']['second_key']);
+
+    // Check result
+    $this->assertTrue($expectedResult, json_encode([
+      'expectedInfo' => $expectedInfo,
+      'result' => $result,
+    ], JSON_UNESCAPED_SLASHES));
+  }
+
 }

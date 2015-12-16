@@ -111,6 +111,31 @@ MojoArray::randomElement(['one', 'two', 'three']);
 // two
 ```
 
+#### morphArrayKeys
+
+```php
+array morphArrayKeys(array $originalArray [, $morphTo = 'camel'])
+```
+```php
+MojoArray::morphArrayKeys([
+  'user' => [
+    'first_name' => 'mojo',
+    'attributes' => [
+      'second_key' => 'second value',
+    ],
+  ],
+], 'camel');
+
+// [
+//   'user' => [
+//     'firstName' => 'mojo',
+//     'attributes' => [
+//       'secondKey' => 'second value',
+//     ],
+//   ],
+// ]
+```
+
 <a id="helper-datetime"></a>
 ## Date & Time
  * Add `Mojopollo\Helpers\DateTimeServiceProvider::class` to your `config/app.php` within the `providers` array.
