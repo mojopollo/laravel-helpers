@@ -1,5 +1,5 @@
 <?php
-use Mojopollo\Helpers\String;
+use Mojopollo\Helpers\DateTime;
 
 class DateTimeTest extends \PHPUnit_Framework_TestCase
 {
@@ -17,9 +17,6 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
   {
     // Parent setup
     parent::SetUp();
-
-    // Set timezone to UTC
-    date_default_timezone_set('UTC');
 
     // Set string class
     $this->dateTime = new DateTime;
