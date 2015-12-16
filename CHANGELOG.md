@@ -3,6 +3,9 @@ Laravel Helpers
 
 ##Changelog
 
+####1.0.4
+* Updates DateTime class
+
 ####1.0.3
 * Adds Arr "Array" class
 
