@@ -18,6 +18,7 @@ Some of these helpers are based on code found in Stackoverflow, look for the @se
 - [Helpers: Array](#helper-array)
 - [Helpers: Date & Time](#helper-datetime)
 - [Helpers: Files & Directories](#helper-file)
+- [Changelog](CHANGELOG.md)
 
 <a id="installation"></a>
 ## Installation
