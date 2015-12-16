@@ -4,7 +4,7 @@ Laravel Helpers
 ##Changelog
 
 ####1.0.4
-* Updates DateTime class
+* Updates DateTime class, adds testing under PHP 7
 
 ####1.0.3
 * Adds Arr "Array" class

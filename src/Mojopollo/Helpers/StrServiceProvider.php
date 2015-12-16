@@ -2,7 +2,7 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class StringServiceProvider extends ServiceProvider
+class StrServiceProvider extends ServiceProvider
 {
 
   /**
@@ -19,9 +19,9 @@ class StringServiceProvider extends ServiceProvider
    */
   public function register()
   {
-    $this->app->bindShared('string', function()
+    $this->app->bindShared('str', function()
     {
-      return new String;
+      return new Str;
     });
   }
 
@@ -32,7 +32,7 @@ class StringServiceProvider extends ServiceProvider
    */
   public function provides()
   {
-    return ['string'];
+    return ['str'];
   }
 
 }
