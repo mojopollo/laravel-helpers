@@ -40,16 +40,16 @@ Next, run the `composer update` command.
 ## Usage
 You can now call any of helper methods via their facades:
 
-`MojoString::replaceFirstMatch('one two three four five six', 3)`
+`StringHelper::replaceFirstMatch('one two three four five six', 3)`
 
-`MojoFile::directoryFiles('/directory-path')`
+`FileHelper::directoryFiles('/directory-path')`
 
 `...`
 
 <a id="helper-string"></a>
 ## String
  * Add `Mojopollo\Helpers\StringServiceProvider::class` to your `config/app.php` within the `providers` array.
- * Add `'MojoString' => Mojopollo\Helpers\Facades\String::class` to your `config/app.php` configuration file within the `aliases` array.
+ * Add `'StringHelper' => Mojopollo\Helpers\Facades\String::class` to your `config/app.php` configuration file within the `aliases` array.
 
 #### camelCase
 
@@ -57,7 +57,7 @@ You can now call any of helper methods via their facades:
 string camelCase(string $value)
 ```
 ```php
-MojoString::camelCase('mojo_pollo');
+StringHelper::camelCase('mojo_pollo');
 
 // mojoPollo
 ```
@@ -68,7 +68,7 @@ MojoString::camelCase('mojo_pollo');
 string snakeCase(string $value [, string $delimiter = '_'])
 ```
 ```php
-MojoString::snakeCase('mojoPollo');
+StringHelper::snakeCase('mojoPollo');
 
 // mojo_pollo
 ```
@@ -79,7 +79,7 @@ MojoString::snakeCase('mojoPollo');
 string replaceFirstMatch(string $search, string $replace, string $subject)
 ```
 ```php
-MojoString::replaceFirstMatch('mojo', 'jojo', 'mojo is a pollo and mojo');
+StringHelper::replaceFirstMatch('mojo', 'jojo', 'mojo is a pollo and mojo');
 
 // jojo is a pollo and mojo
 ```
@@ -90,7 +90,7 @@ MojoString::replaceFirstMatch('mojo', 'jojo', 'mojo is a pollo and mojo');
 string testLimitByWords(string $str [, int $wordCount = 10])
 ```
 ```php
-MojoString::testLimitByWords('one two three four five six', 3);
+StringHelper::testLimitByWords('one two three four five six', 3);
 
 // one two three
 ```
@@ -98,7 +98,7 @@ MojoString::testLimitByWords('one two three four five six', 3);
 <a id="helper-array"></a>
 ## Array
  * Add `Mojopollo\Helpers\ArrServiceProvider::class` to your `config/app.php` within the `providers` array.
- * Add `'MojoArray' => Mojopollo\Helpers\Facades\Arr::class` to your `config/app.php` configuration file within the `aliases` array.
+ * Add `'ArrayHelper' => Mojopollo\Helpers\Facades\Arr::class` to your `config/app.php` configuration file within the `aliases` array.
 
 #### randomElement
 
@@ -106,7 +106,7 @@ MojoString::testLimitByWords('one two three four five six', 3);
 mixed randomElement(array $array)
 ```
 ```php
-MojoArray::randomElement(['one', 'two', 'three']);
+ArrayHelper::randomElement(['one', 'two', 'three']);
 
 // two
 ```
@@ -117,7 +117,7 @@ MojoArray::randomElement(['one', 'two', 'three']);
 array morphArrayKeys(array $originalArray [, $morphTo = 'camel'])
 ```
 ```php
-MojoArray::morphArrayKeys([
+ArrayHelper::morphArrayKeys([
   'user' => [
     'first_name' => 'mojo',
     'attributes' => [
@@ -142,7 +142,7 @@ MojoArray::morphArrayKeys([
 array castValues(array $originalArray)
 ```
 ```php
-MojoArray::castValues([
+ArrayHelper::castValues([
   'value1' => 'true',
   'value2' => 'false',
   'value3' => '123',
@@ -197,7 +197,7 @@ $priority = [
 ];
 
 
-MojoArray::sortByPriority($originalArray, $priority);
+ArrayHelper::sortByPriority($originalArray, $priority);
 
 // [
 //   [
@@ -226,13 +226,13 @@ MojoArray::sortByPriority($originalArray, $priority);
 <a id="helper-datetime"></a>
 ## Date & Time
  * Add `Mojopollo\Helpers\DateTimeServiceProvider::class` to your `config/app.php` within the `providers` array.
- * Add `'MojoDateTime' => Mojopollo\Helpers\Facades\DateTime::class` to your `config/app.php` configuration file within the `aliases` array.
+ * Add `'DateTimeHelper' => Mojopollo\Helpers\Facades\DateTime::class` to your `config/app.php` configuration file within the `aliases` array.
 
 
 <a id="helper-file"></a>
 ## Files & Directories
  * Add `Mojopollo\Helpers\FileServiceProvider::class` to your `config/app.php` within the `providers` array.
- * Add `'MojoFile' => Mojopollo\Helpers\Facades\File::class` to your `config/app.php` configuration file within the `aliases` array.
+ * Add `'FileHelper' => Mojopollo\Helpers\Facades\File::class` to your `config/app.php` configuration file within the `aliases` array.
 
 #### directoryFiles
 
@@ -240,7 +240,7 @@ MojoArray::sortByPriority($originalArray, $priority);
 array directoryFiles(string $path)
 ```
 ```php
-MojoFile::directoryFiles('/directory-path');
+FileHelper::directoryFiles('/directory-path');
 
 // ['/directory-path/file1.txt', '/directory-path/file2.txt', '/directory-path/subdirectory/file3.txt']
 ```
