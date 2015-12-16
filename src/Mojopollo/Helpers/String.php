@@ -10,7 +10,7 @@ class String implements StringInterface
    * @param  string  $value
    * @return string
    */
-  function camelCase($value)
+  public static function camelCase($value)
   {
     return Str::camel($value);
   }
@@ -22,7 +22,7 @@ class String implements StringInterface
    * @param  string  $delimiter
    * @return string
    */
-  function snakeCase($value, $delimiter = '_')
+  public static function snakeCase($value, $delimiter = '_')
   {
     return Str::snake($value, $delimiter);
   }
@@ -37,7 +37,7 @@ class String implements StringInterface
    * @param  string $subject  The original string to be searched against
    * @return string           Returns modified $subject OR returns original $subject when no match is found
    */
-  public function replaceFirstMatch($search, $replace, $subject)
+  public static function replaceFirstMatch($search, $replace, $subject)
   {
     // If we have a match
     $pos = strpos($subject, $search);
@@ -60,7 +60,7 @@ class String implements StringInterface
    * @param  integer $wordCount  amount to wordCount paragraph to
    * @return string              string with int limitation set
    */
-  public function limitByWords($str, $wordCount = 10)
+  public static function limitByWords($str, $wordCount = 10)
   {
     // Reads amount of words in paragraph
     $words = preg_split("/[\s]+/", $str, $wordCount + 1);

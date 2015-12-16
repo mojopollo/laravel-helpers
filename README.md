@@ -12,6 +12,7 @@ Mojo's Laravel Helpers
 - [Installation](#installation)
 - [Usage](#usage)
 - [Helpers: String](#helper-string)
+- [Helpers: Array](#helper-array)
 - [Helpers: Date & Time](#helper-datetime)
 - [Helpers: Files & Directories](#helper-file)
 
@@ -45,7 +46,7 @@ You can now call any of helper methods via their facades:
 
 `...`
 
-<a id="helper-file"></a>
+<a id="helper-string"></a>
 ## String
  * Add `Mojopollo\Helpers\StringServiceProvider::class` to your `config/app.php` within the `providers` array.
  * Add `'MojoString' => Mojopollo\Helpers\Facades\String::class` to your `config/app.php` configuration file within the `aliases` array.
@@ -92,6 +93,134 @@ string testLimitByWords(string $str [, int $wordCount = 10])
 MojoString::testLimitByWords('one two three four five six', 3);
 
 // one two three
+```
+
+<a id="helper-array"></a>
+## Array
+ * Add `Mojopollo\Helpers\ArrServiceProvider::class` to your `config/app.php` within the `providers` array.
+ * Add `'MojoArray' => Mojopollo\Helpers\Facades\Arr::class` to your `config/app.php` configuration file within the `aliases` array.
+
+#### randomElement
+
+```php
+mixed randomElement(array $array)
+```
+```php
+MojoArray::randomElement(['one', 'two', 'three']);
+
+// two
+```
+
+#### morphArrayKeys
+
+```php
+array morphArrayKeys(array $originalArray [, $morphTo = 'camel'])
+```
+```php
+MojoArray::morphArrayKeys([
+  'user' => [
+    'first_name' => 'mojo',
+    'attributes' => [
+      'second_key' => 'second value',
+    ],
+  ],
+], 'camel');
+
+// [
+//   'user' => [
+//     'firstName' => 'mojo',
+//     'attributes' => [
+//       'secondKey' => 'second value',
+//     ],
+//   ],
+// ]
+```
+
+#### castValues
+
+```php
+array castValues(array $originalArray)
+```
+```php
+MojoArray::castValues([
+  'value1' => 'true',
+  'value2' => 'false',
+  'value3' => '123',
+  'value4' => '{"mojo": "pollo"}',
+]);
+
+// [
+//   'value1' => true,
+//   'value2' => false,
+//   'value3' => 123,
+//   'value4' => ['mojo' => 'pollo'],
+// ]
+```
+
+#### sortByPriority
+
+```php
+array sortByPriority(array $originalArray, array $priority)
+```
+```php
+
+$originalArray = [
+  [
+    'name' => 'White Castle',
+    'city' => 'Las Vegas',
+    'zip' => '89109',
+  ],
+  [
+    'name' => 'Burger Town',
+    'city' => 'Sherman Oaks',
+    'zip' => '91403',
+  ],
+  [
+    'name' => 'Krabby Patty',
+    'city' => 'Walking the Plankton',
+    'zip' => '00000',
+  ],
+  [
+    'name' => 'Uber Burger',
+    'city' => 'Little Rock',
+    'zip' => '72201',
+  ],
+];
+
+$priority = [
+  [
+    'city' => 'Walking the Plankton'
+  ],
+  [
+    'name' => 'Burger Town'
+  ],
+];
+
+
+MojoArray::sortByPriority($originalArray, $priority);
+
+// [
+//   [
+//     'name' => 'Krabby Patty',
+//     'city' => 'Walking the Plankton',
+//     'zip' => '00000',
+//   ],
+//   [
+//     'name' => 'Burger Town',
+//     'city' => 'Sherman Oaks',
+//     'zip' => '91403',
+//   ],
+//   [
+//     'name' => 'White Castle',
+//     'city' => 'Las Vegas',
+//     'zip' => '89109',
+//   ],
+//   [
+//     'name' => 'Uber Burger',
+//     'city' => 'Little Rock',
+//     'zip' => '72201',
+//   ],
+// ]
 ```
 
 <a id="helper-datetime"></a>
