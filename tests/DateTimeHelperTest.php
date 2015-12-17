@@ -1,14 +1,14 @@
 <?php
-use Mojopollo\Helpers\DateTime;
+use Mojopollo\Helpers\DateTimeHelper;
 
-class DateTimeTest extends \PHPUnit_Framework_TestCase
+class DateTimeHelperTest extends \PHPUnit_Framework_TestCase
 {
   /**
-   * DateTime class object
+   * DateTimeHelper class object
    *
-   * @var DateTime
+   * @var DateTimeHelper
    */
-  protected $dateTime;
+  protected $dateTimeHelper;
 
   /**
    * This will run at the beginning of every test method
@@ -19,7 +19,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
     parent::SetUp();
 
     // Set string class
-    $this->dateTime = new DateTime;
+    $this->dateTimeHelper = new DateTimeHelper;
   }
 
   /**
@@ -31,7 +31,7 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
     parent::tearDown();
 
     // Unset GoogleApisHelper class
-    $this->dateTime = null;
+    $this->dateTimeHelper = null;
   }
 
   /**

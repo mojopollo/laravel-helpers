@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Str as IlluminateStr;
 
-class Str implements StrInterface
+class StringHelper implements StringHelperInterface
 {
   /**
    * Convert a value to camel case

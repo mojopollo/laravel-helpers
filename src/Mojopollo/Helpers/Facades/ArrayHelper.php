@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Facade;
 
-class Arr extends Facade
+class ArrayHelper extends Facade
 {
 
   /**
@@ -10,6 +10,6 @@ class Arr extends Facade
    *
    * @return arr
    */
-  protected static function getFacadeAccessor() { return 'arr'; }
+  protected static function getFacadeAccessor() { return 'arrayhelper'; }
 
 }

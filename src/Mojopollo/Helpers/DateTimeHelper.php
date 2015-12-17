@@ -1,6 +1,6 @@
 <?php namespace Mojopollo\Helpers;
 
-class DateTime implements DateTimeInterface
+class DateTimeHelper implements DateTimeHelperInterface
 {
 
   /**

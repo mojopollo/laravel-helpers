@@ -1,6 +1,6 @@
 <?php namespace Mojopollo\Helpers;
 
-class File implements FileInterface
+class FileHelper implements FileHelperInterface
 {
 
   /**

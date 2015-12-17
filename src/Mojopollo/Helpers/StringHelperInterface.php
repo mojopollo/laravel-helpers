@@ -1,6 +1,6 @@
 <?php namespace Mojopollo\Helpers;
 
-interface StrInterface
+interface StringHelperInterface
 {
   /**
    * Convert a value to camel case

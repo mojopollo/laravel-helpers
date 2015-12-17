@@ -1,9 +1,9 @@
 <?php namespace Mojopollo\Helpers;
 
 use Illuminate\Support\Arr as IlluminateArr;
-use Mojopollo\Helpers\Str;
+use Mojopollo\Helpers\StringHelper;
 
-class Arr implements ArrInterface
+class ArrayHelper implements ArrayHelperInterface
 {
   /**
    * Get a random element from the array supplied
@@ -46,12 +46,12 @@ class Arr implements ArrInterface
 
         // Camel case
         case 'camel':
-          $newKey = Str::camelCase($key);
+          $newKey = StringHelper::camelCase($key);
         break 1;
 
         // Snake case
         case 'snake':
-          $newKey = Str::snakeCase($key);
+          $newKey = StringHelper::snakeCase($key);
         break 1;
       }
 

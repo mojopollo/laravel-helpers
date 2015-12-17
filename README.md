@@ -35,18 +35,18 @@ composer require mojopollo/laravel-helpers
 
 Add the following into the `providers` array:
 ```php
-Mojopollo\Helpers\StrServiceProvider::class,
-Mojopollo\Helpers\ArrServiceProvider::class,
-Mojopollo\Helpers\DateTimeServiceProvider::class,
-Mojopollo\Helpers\FileServiceProvider::class,
+Mojopollo\Helpers\StringHelperServiceProvider::class,
+Mojopollo\Helpers\ArrayHelperServiceProvider::class,
+Mojopollo\Helpers\DateTimeHelperServiceProvider::class,
+Mojopollo\Helpers\FileHelperServiceProvider::class,
 ```
 
 Add the following into the `aliases` array:
 ```php
-'StringHelper'   => Mojopollo\Helpers\Facades\Str::class,
-'ArrayHelper'    => Mojopollo\Helpers\Facades\Arr::class,
-'DateTimeHelper' => Mojopollo\Helpers\Facades\DateTime::class,
-'FileHelper'     => Mojopollo\Helpers\Facades\File::class,
+'StringHelper'   => Mojopollo\Helpers\Facades\StringHelper::class,
+'ArrayHelper'    => Mojopollo\Helpers\Facades\ArrayHelper::class,
+'DateTimeHelper' => Mojopollo\Helpers\Facades\DateTimeHelper::class,
+'FileHelper'     => Mojopollo\Helpers\Facades\FileHelper::class,
 ```
 
 <a id="usage"></a>

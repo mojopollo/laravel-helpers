@@ -2,7 +2,7 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class FileServiceProvider extends ServiceProvider
+class FileHelperServiceProvider extends ServiceProvider
 {
 
   /**
@@ -19,7 +19,7 @@ class FileServiceProvider extends ServiceProvider
    */
   public function register()
   {
-    $this->app->bindShared('file', function()
+    $this->app->bindShared('filehelper', function()
     {
       return new File;
     });
@@ -32,7 +32,7 @@ class FileServiceProvider extends ServiceProvider
    */
   public function provides()
   {
-    return ['file'];
+    return ['filehelper'];
   }
 
 }

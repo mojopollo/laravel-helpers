@@ -2,7 +2,7 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class DateTimeServiceProvider extends ServiceProvider
+class DateTimeHelperServiceProvider extends ServiceProvider
 {
 
   /**
@@ -19,7 +19,7 @@ class DateTimeServiceProvider extends ServiceProvider
    */
   public function register()
   {
-    $this->app->bindShared('datetime', function()
+    $this->app->bindShared('datetimehelper', function()
     {
       return new DateTime;
     });
@@ -32,7 +32,7 @@ class DateTimeServiceProvider extends ServiceProvider
    */
   public function provides()
   {
-    return ['datetime'];
+    return ['datetimehelper'];
   }
 
 }

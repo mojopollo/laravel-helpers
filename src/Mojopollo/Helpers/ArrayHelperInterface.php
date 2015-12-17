@@ -1,6 +1,6 @@
 <?php namespace Mojopollo\Helpers;
 
-interface ArrInterface
+interface ArrayHelperInterface
 {
   /**
    * Get a random element from the array supplied
