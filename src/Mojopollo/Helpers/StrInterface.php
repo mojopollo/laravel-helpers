@@ -3,7 +3,7 @@
 interface StrInterface
 {
   /**
-   * Convert a value to camel case.
+   * Convert a value to camel case
    *
    * @param  string  $value
    * @return string
@@ -11,7 +11,7 @@ interface StrInterface
   public static function camelCase($value);
 
   /**
-   * Convert a string to snake case.
+   * Convert a value to snake case
    *
    * @param  string  $value
    * @param  string  $delimiter

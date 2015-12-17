@@ -5,7 +5,7 @@ use Illuminate\Support\Str as IlluminateStr;
 class Str implements StrInterface
 {
   /**
-   * Convert a value to camel case.
+   * Convert a value to camel case
    *
    * @param  string  $value
    * @return string
@@ -16,7 +16,7 @@ class Str implements StrInterface
   }
 
   /**
-   * Convert a string to snake case.
+   * Convert a value to snake case
    *
    * @param  string  $value
    * @param  string  $delimiter
