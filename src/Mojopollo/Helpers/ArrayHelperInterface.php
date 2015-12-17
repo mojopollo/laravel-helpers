@@ -1,6 +1,6 @@
 <?php namespace Mojopollo\Helpers;
 
-interface ArrInterface
+interface ArrayHelperInterface
 {
   /**
    * Get a random element from the array supplied
@@ -29,7 +29,7 @@ interface ArrInterface
 
   /**
    * Re-orders an array by moving elements to the top of the array based
-   * on a pre-defined array stating which elementss to move
+   * on a pre-defined array stating which elements to move to top of array
    *
    * @param  Array  $originalArray The array thats to be re-ordered
    * @param  Array  $priority      The array that contains which

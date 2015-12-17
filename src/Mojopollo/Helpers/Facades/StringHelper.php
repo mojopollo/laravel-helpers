@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Facade;
 
-class File extends Facade
+class StringHelper extends Facade
 {
 
   /**
@@ -10,6 +10,6 @@ class File extends Facade
    *
    * @return string
    */
-  protected static function getFacadeAccessor() { return 'file'; }
+  protected static function getFacadeAccessor() { return 'stringhelper'; }
 
 }

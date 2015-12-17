@@ -1,7 +1,7 @@
 {
     "name": "mojopollo/laravel-helpers",
     "description": "Mojo's Laravel Helpers: A suite of various helpers for use in Laravel 5.0 / 5.1 / Composer",
-    "keywords": ["mojopollo", "mojo", "laravel", "helpers", "helper"],
+    "keywords": ["mojopollo", "mojo", "laravel", "helpers", "helper", "php7", "string", "array", "file", "date", "time"],
     "homepage": "http://localhost",
     "license" : "MIT",
     "authors": [

@@ -18,6 +18,7 @@ Some of these helpers are based on code found in Stackoverflow, look for the @se
 - [Helpers: Array](#helper-array)
 - [Helpers: Date & Time](#helper-datetime)
 - [Helpers: Files & Directories](#helper-file)
+- [Changelog](CHANGELOG.md)
 
 <a id="installation"></a>
 ## Installation
@@ -34,18 +35,18 @@ composer require mojopollo/laravel-helpers
 
 Add the following into the `providers` array:
 ```php
-Mojopollo\Helpers\StrServiceProvider::class,
-Mojopollo\Helpers\ArrServiceProvider::class,
-Mojopollo\Helpers\DateTimeServiceProvider::class,
-Mojopollo\Helpers\FileServiceProvider::class,
+Mojopollo\Helpers\StringHelperServiceProvider::class,
+Mojopollo\Helpers\ArrayHelperServiceProvider::class,
+Mojopollo\Helpers\DateTimeHelperServiceProvider::class,
+Mojopollo\Helpers\FileHelperServiceProvider::class,
 ```
 
 Add the following into the `aliases` array:
 ```php
-'StringHelper'   => Mojopollo\Helpers\Facades\Str::class,
-'ArrayHelper'    => Mojopollo\Helpers\Facades\Arr::class,
-'DateTimeHelper' => Mojopollo\Helpers\Facades\DateTime::class,
-'FileHelper'     => Mojopollo\Helpers\Facades\File::class,
+'StringHelper'   => Mojopollo\Helpers\Facades\StringHelper::class,
+'ArrayHelper'    => Mojopollo\Helpers\Facades\ArrayHelper::class,
+'DateTimeHelper' => Mojopollo\Helpers\Facades\DateTimeHelper::class,
+'FileHelper'     => Mojopollo\Helpers\Facades\FileHelper::class,
 ```
 
 <a id="usage"></a>
@@ -84,6 +85,7 @@ If you do not want to utilize the `use` keyword, you can alternatively use a bla
 ## StringHelper
 
 #### camelCase
+Convert a value to camel case
 
 ```php
 string camelCase(string $value)
@@ -95,6 +97,7 @@ StringHelper::camelCase('mojo_pollo');
 ```
 
 #### snakeCase
+Convert a value to snake case
 
 ```php
 string snakeCase(string $value [, string $delimiter = '_'])
@@ -106,6 +109,7 @@ StringHelper::snakeCase('mojoPollo');
 ```
 
 #### replaceFirstMatch
+str_replace() for replacing just the first match in a string search
 
 ```php
 string replaceFirstMatch(string $search, string $replace, string $subject)
@@ -116,13 +120,14 @@ StringHelper::replaceFirstMatch('mojo', 'jojo', 'mojo is a pollo and mojo');
 // jojo is a pollo and mojo
 ```
 
-#### testLimitByWords
+#### limitByWords
+Returns a string limited by the word count specified
 
 ```php
-string testLimitByWords(string $str [, int $wordCount = 10])
+string limitByWords(string $str [, int $wordCount = 10])
 ```
 ```php
-StringHelper::testLimitByWords('one two three four five six', 3);
+StringHelper::limitByWords('one two three four five six', 3);
 
 // one two three
 ```
@@ -131,6 +136,7 @@ StringHelper::testLimitByWords('one two three four five six', 3);
 ## ArrayHelper
 
 #### randomElement
+Get a random element from the array supplied
 
 ```php
 mixed randomElement(array $array)
@@ -142,6 +148,7 @@ ArrayHelper::randomElement(['one', 'two', 'three']);
 ```
 
 #### morphArrayKeys
+Will camelize all keys found in a array or multi dimensional array
 
 ```php
 array morphArrayKeys(array $originalArray [, $morphTo = 'camel'])
@@ -167,6 +174,7 @@ ArrayHelper::morphArrayKeys([
 ```
 
 #### castValues
+Will cast '123' as int, 'true' as the boolean true, etc
 
 ```php
 array castValues(array $originalArray)
@@ -188,6 +196,7 @@ ArrayHelper::castValues([
 ```
 
 #### sortByPriority
+Re-orders an array by moving elements to the top of the array based on a pre-defined array stating which elements to move to top of array
 
 ```php
 array sortByPriority(array $originalArray, array $priority)
@@ -261,6 +270,7 @@ ArrayHelper::sortByPriority($originalArray, $priority);
 ## FileHelper
 
 #### directoryFiles
+Return an array of files with their full paths contained in a directory and its subdirectories
 
 ```php
 array directoryFiles(string $path)

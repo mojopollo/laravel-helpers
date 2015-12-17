@@ -2,7 +2,7 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class StrServiceProvider extends ServiceProvider
+class ArrayHelperServiceProvider extends ServiceProvider
 {
 
   /**
@@ -19,20 +19,20 @@ class StrServiceProvider extends ServiceProvider
    */
   public function register()
   {
-    $this->app->bindShared('str', function()
+    $this->app->bindShared('arrayhelper', function()
     {
-      return new Str;
+      return new Arr;
     });
   }
 
   /**
    * Get the services provided by the provider.
    *
-   * @return array
+   * @return arr
    */
   public function provides()
   {
-    return ['str'];
+    return ['arrayhelper'];
   }
 
 }

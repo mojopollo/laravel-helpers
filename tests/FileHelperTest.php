@@ -1,14 +1,14 @@
 <?php
-use Mojopollo\Helpers\File;
+use Mojopollo\Helpers\FileHelper;
 
-class FileTest extends \PHPUnit_Framework_TestCase
+class FileHelperTest extends \PHPUnit_Framework_TestCase
 {
   /**
-   * String class object
+   * FileHelper class object
    *
-   * @var String
+   * @var FileHelper
    */
-  protected $file;
+  protected $fileHelper;
 
   /**
    * This will run at the beginning of every test method
@@ -19,7 +19,7 @@ class FileTest extends \PHPUnit_Framework_TestCase
     parent::SetUp();
 
     // Set file class
-    $this->file = new File;
+    $this->fileHelper = new FileHelper;
   }
 
   /**
@@ -31,7 +31,7 @@ class FileTest extends \PHPUnit_Framework_TestCase
     parent::tearDown();
 
     // Unset GoogleApisHelper class
-    $this->file = null;
+    $this->fileHelper = null;
   }
 
   /**
@@ -42,7 +42,7 @@ class FileTest extends \PHPUnit_Framework_TestCase
   public function testDirectoryFiles()
   {
     // Get file listing
-    $result = $this->file->directoryFiles(__DIR__ . '/file');
+    $result = $this->fileHelper->directoryFiles(__DIR__ . '/file');
 
     // There must be 3 files
     $this->assertEquals(count($result), 3);

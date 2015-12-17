@@ -1,14 +1,14 @@
 <?php
-use Mojopollo\Helpers\Arr;
+use Mojopollo\Helpers\ArrayHelper;
 
-class ArrTest extends \PHPUnit_Framework_TestCase
+class ArrayHelperTest extends \PHPUnit_Framework_TestCase
 {
   /**
-   * Arr class object
+   * ArrayHelper class object
    *
-   * @var Arr
+   * @var ArrayHelper
    */
-  protected $arr;
+  protected $arrayHelper;
 
   /**
    * This will run at the beginning of every test method
@@ -19,7 +19,7 @@ class ArrTest extends \PHPUnit_Framework_TestCase
     parent::SetUp();
 
     // Set Arr class
-    $this->arr = new Arr;
+    $this->arrayHelper = new ArrayHelper;
   }
 
   /**
@@ -31,7 +31,7 @@ class ArrTest extends \PHPUnit_Framework_TestCase
     parent::tearDown();
 
     // Unset Arr class
-    $this->arr = null;
+    $this->arrayHelper = null;
   }
 
   /**
@@ -49,7 +49,7 @@ class ArrTest extends \PHPUnit_Framework_TestCase
     ];
 
     // Execute method
-    $result = $this->arr->randomElement($array);
+    $result = $this->arrayHelper->randomElement($array);
 
     // Expected result, we get a string back with either of the following values
     $expectedResult = ($result == 'one' || $result == 'two' || $result == 'three');
@@ -77,7 +77,7 @@ class ArrTest extends \PHPUnit_Framework_TestCase
     $morphTo = 'camel';
 
     // Execute method
-    $result = $this->arr->morphArrayKeys($originalArray, $morphTo);
+    $result = $this->arrayHelper->morphArrayKeys($originalArray, $morphTo);
 
     // Expected result
     $expectedInfo = 'Keys should be camelized to firstName and secondKey, regardless of multi dimensional array level';
@@ -109,7 +109,7 @@ class ArrTest extends \PHPUnit_Framework_TestCase
     $morphTo = 'snake';
 
     // Execute method
-    $result = $this->arr->morphArrayKeys($originalArray, $morphTo);
+    $result = $this->arrayHelper->morphArrayKeys($originalArray, $morphTo);
 
     // Expected result
     $expectedInfo = 'Keys should be snakecased to first_name and second_key, regardless of multi dimensional array level';
@@ -138,7 +138,7 @@ class ArrTest extends \PHPUnit_Framework_TestCase
     ];
 
     // Execute method
-    $result = $this->arr->castValues($originalArray);
+    $result = $this->arrayHelper->castValues($originalArray);
 
     // Expected result
     $expectedArray = [
@@ -194,7 +194,7 @@ class ArrTest extends \PHPUnit_Framework_TestCase
     ];
 
     // Execute method
-    $result = $this->arr->sortByPriority($originalArray, $priority);
+    $result = $this->arrayHelper->sortByPriority($originalArray, $priority);
 
     // Expected result
     $expectedArray = [

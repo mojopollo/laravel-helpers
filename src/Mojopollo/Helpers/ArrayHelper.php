@@ -1,9 +1,9 @@
 <?php namespace Mojopollo\Helpers;
 
 use Illuminate\Support\Arr as IlluminateArr;
-use Mojopollo\Helpers\Str;
+use Mojopollo\Helpers\StringHelper;
 
-class Arr implements ArrInterface
+class ArrayHelper implements ArrayHelperInterface
 {
   /**
    * Get a random element from the array supplied
@@ -46,12 +46,12 @@ class Arr implements ArrInterface
 
         // Camel case
         case 'camel':
-          $newKey = Str::camelCase($key);
+          $newKey = StringHelper::camelCase($key);
         break 1;
 
         // Snake case
         case 'snake':
-          $newKey = Str::snakeCase($key);
+          $newKey = StringHelper::snakeCase($key);
         break 1;
       }
 
@@ -103,7 +103,7 @@ class Arr implements ArrInterface
 
   /**
    * Re-orders an array by moving elements to the top of the array based
-   * on a pre-defined array stating which elementss to move
+   * on a pre-defined array stating which elements to move to top of array
    *
    * @param  Array  $originalArray The array thats to be re-ordered
    * @param  Array  $priority      The array that contains which

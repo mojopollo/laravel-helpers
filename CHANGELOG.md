@@ -3,6 +3,9 @@ Laravel Helpers
 
 ##Changelog
 
+####1.0.5
+* Renames all classes for better readability and to prevent possible similar class naming collisions within namespaces
+
 ####1.0.4
 * Updates DateTime class, adds testing under PHP 7
 

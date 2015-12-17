@@ -1,10 +1,10 @@
 <?php namespace Mojopollo\Helpers;
 
-interface FileInterface
+interface FileHelperInterface
 {
 
   /**
-   * Return all files contained in a directory and its subdirectories
+   * Return an array of files with their full paths contained in a directory and its subdirectories
    *
    * @param  string $path   path to directtory
    * @return array          full paths of directory files

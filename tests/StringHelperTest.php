@@ -1,14 +1,14 @@
 <?php
-use Mojopollo\Helpers\Str;
+use Mojopollo\Helpers\StringHelper;
 
-class StrTest extends \PHPUnit_Framework_TestCase
+class StringHelperTest extends \PHPUnit_Framework_TestCase
 {
   /**
-   * String class object
+   * StringHelper class object
    *
-   * @var Str
+   * @var StringHelper
    */
-  protected $str;
+  protected $stringHelper;
 
   /**
    * This will run at the beginning of every test method
@@ -19,7 +19,7 @@ class StrTest extends \PHPUnit_Framework_TestCase
     parent::SetUp();
 
     // Set string class
-    $this->str = new Str;
+    $this->stringHelper = new StringHelper;
   }
 
   /**
@@ -31,7 +31,7 @@ class StrTest extends \PHPUnit_Framework_TestCase
     parent::tearDown();
 
     // Unset string class
-    $this->str = null;
+    $this->stringHelper = null;
   }
 
   /**
@@ -44,7 +44,7 @@ class StrTest extends \PHPUnit_Framework_TestCase
     $original = 'mojo_pollo';
 
     // Convert to camel
-    $result = $this->str->camelCase($original);
+    $result = $this->stringHelper->camelCase($original);
 
     // Expected string
     $expected = 'mojoPollo';
@@ -63,7 +63,7 @@ class StrTest extends \PHPUnit_Framework_TestCase
     $original = 'mojoPollo';
 
     // Convert to camel
-    $result = $this->str->snakeCase($original);
+    $result = $this->stringHelper->snakeCase($original);
 
     // Expected string
     $expected = 'mojo_pollo';
@@ -83,7 +83,7 @@ class StrTest extends \PHPUnit_Framework_TestCase
     $original = 'mojo is a pollo and mojo';
 
     // Replace "mojo" with "jojo"
-    $result = $this->str->replaceFirstMatch('mojo', 'jojo', $original);
+    $result = $this->stringHelper->replaceFirstMatch('mojo', 'jojo', $original);
 
     // Expected modified sentence
     $expected = 'jojo is a pollo and mojo';
@@ -103,7 +103,7 @@ class StrTest extends \PHPUnit_Framework_TestCase
     $original = 'one two three four five six';
 
     // Replace "mojo" with "jojo"
-    $result = $this->str->limitByWords($original, 3);
+    $result = $this->stringHelper->limitByWords($original, 3);
 
     // Expected modified sentence
     $expected = 'one two three';

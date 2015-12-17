@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Facade;
 
-class DateTime extends Facade
+class DateTimeHelper extends Facade
 {
 
   /**
@@ -10,6 +10,6 @@ class DateTime extends Facade
    *
    * @return string
    */
-  protected static function getFacadeAccessor() { return 'datetime'; }
+  protected static function getFacadeAccessor() { return 'datetimehelper'; }
 
 }
