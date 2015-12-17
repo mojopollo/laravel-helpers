@@ -117,13 +117,13 @@ StringHelper::replaceFirstMatch('mojo', 'jojo', 'mojo is a pollo and mojo');
 // jojo is a pollo and mojo
 ```
 
-#### testLimitByWords
+#### limitByWords
 
 ```php
-string testLimitByWords(string $str [, int $wordCount = 10])
+string limitByWords(string $str [, int $wordCount = 10])
 ```
 ```php
-StringHelper::testLimitByWords('one two three four five six', 3);
+StringHelper::limitByWords('one two three four five six', 3);
 
 // one two three
 ```
