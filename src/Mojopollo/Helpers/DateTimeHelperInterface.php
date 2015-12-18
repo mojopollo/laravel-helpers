@@ -2,6 +2,13 @@
 
 interface DateTimeHelperInterface
 {
+  /**
+   * Parses a string like "mon,tue,wed,thu,fri,sat,sun" into a array
+   *
+   * @param  string $daysOfWeek     example: mon,tue,wed,thu,fri,sat,sun    mon,wed,fri
+   * @return null|array             null if there was a parsing error or a array with parsed days of the week
+   */
+  public function daysOfWeek($daysOfWeek);
 
   /**
    * Generates an array of start and endates for a specified period of time (UTC)
@@ -17,6 +24,6 @@ interface DateTimeHelperInterface
    * @param  string $dateFormat              example: Y-m-d
    * @return array                           Final array with collection of start and end dates
    */
-  public function startEndDateRange($startDate, $endDate, $periodDate, $step = '+1 day', $daysOfWeek = null, $daysOfWeekTimeZoneName = null, $dateFormat = 'Y-m-d H:i:s');
+  public function range($startDate, $endDate, $periodDate, $step = '+1 day', $daysOfWeek = null, $daysOfWeekTimeZoneName = null, $dateFormat = 'Y-m-d H:i:s');
 
 }

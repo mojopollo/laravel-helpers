@@ -35,14 +35,26 @@ class DateTimeHelperTest extends \PHPUnit_Framework_TestCase
   }
 
   /**
-   * Temp placeholder
+   * Test range() with daily generation
    *
    * @return void
    */
-  public function testInitial()
+  public function testRangeDaily()
   {
-    // Test
-    $this->assertTrue(true);
+    // Set parameters
+    $startDate = '2015-06-04 08:00:00';
+    $endDate = '2015-06-04 12:00:00';
+    $periodDate = '2015-06-15 12:00:00';
+    $step = '+1 day';
+    $daysOfWeek = null;
+    $daysOfWeekTimeZoneName = null;
+    $dateFormat = 'Y-m-d H:i:s';
+
+    // Execute method
+    $result = $this->dateTimeHelper->range($startDate, $endDate, $periodDate, $step, $daysOfWeek, $daysOfWeekTimeZoneName, $dateFormat);
+
+    // Check: there should be a total of 12 total records created
+    $this->assertEquals(12, count($result));
   }
 
 }

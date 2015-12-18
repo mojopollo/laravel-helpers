@@ -4,6 +4,53 @@ class DateTimeHelper implements DateTimeHelperInterface
 {
 
   /**
+   * Create a new DateTimeHelper instance
+   *
+   * @return void
+   */
+  public function __construct()
+  {
+    // Set timezone to UTC
+    date_default_timezone_set('UTC');
+  }
+
+  /**
+   * Parses a string like "mon,tue,wed,thu,fri,sat,sun" into a array
+   *
+   * @param  string $daysOfWeek     example: mon,tue,wed,thu,fri,sat,sun    mon,wed,fri
+   * @return null|array             null if there was a parsing error or a array with parsed days of the week
+   */
+  public function daysOfWeek($daysOfWeek)
+  {
+    // Check for empty, string or no value
+    if (empty($daysOfWeek) || is_string($daysOfWeek) === false || strlen($daysOfWeek) < 3) {
+
+      // Return with a null parse
+      return null;
+    }
+
+    // Separate days of the week by comma
+    $daysOfWeek = explode(',', $daysOfWeek);
+
+    // Allowed values
+    $allowedValues = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+    // Make sure each day of week
+    foreach ($daysOfWeek as $dayOfWeek) {
+
+      // Is an allowed value
+      if (in_array($dayOfWeek, $allowedValues) === false) {
+
+        // Otherwise return with a null parse
+        return null;
+      }
+    }
+
+    // Return days of the week
+    return $daysOfWeek;
+  }
+
+  /**
    * Generates an array of start and endates for a specified period of time (UTC)
    * based on: date_range by alioygur@gmail.com on SO
    *
@@ -17,7 +64,7 @@ class DateTimeHelper implements DateTimeHelperInterface
    * @param  string $dateFormat              example: Y-m-d
    * @return array                           Final array with collection of start and end dates
    */
-  public function startEndDateRange($startDate, $endDate, $periodDate, $step = '+1 day', $daysOfWeek = null, $daysOfWeekTimeZoneName = null, $dateFormat = 'Y-m-d H:i:s')
+  public function range($startDate, $endDate, $periodDate, $step = '+1 day', $daysOfWeek = null, $daysOfWeekTimeZoneName = null, $dateFormat = 'Y-m-d H:i:s')
   {
     // Date array
     $dates = [];
@@ -27,7 +74,7 @@ class DateTimeHelper implements DateTimeHelperInterface
     $periodDate = strtotime($periodDate);
 
     // Set days of week
-    $daysOfWeek = static::daysOfWeek($daysOfWeek);
+    $daysOfWeek = self::daysOfWeek($daysOfWeek);
 
     // Get difference between current date and end date
     $endDateDifference = strtotime($endDate) - $currentDate;

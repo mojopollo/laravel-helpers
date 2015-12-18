@@ -202,7 +202,6 @@ Re-orders an array by moving elements to the top of the array based on a pre-def
 array sortByPriority(array $originalArray, array $priority)
 ```
 ```php
-
 $originalArray = [
   [
     'name' => 'White Castle',
@@ -278,5 +277,9 @@ array directoryFiles(string $path)
 ```php
 FileHelper::directoryFiles('/directory-path');
 
-// ['/directory-path/file1.txt', '/directory-path/file2.txt', '/directory-path/subdirectory/file3.txt']
+// [
+//   '/directory-path/file1.txt',
+//   '/directory-path/file2.txt',
+//   '/directory-path/subdirectory/file3.txt',
+// ]
 ```
