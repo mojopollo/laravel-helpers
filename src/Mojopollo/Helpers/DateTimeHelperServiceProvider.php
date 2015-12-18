@@ -21,7 +21,7 @@ class DateTimeHelperServiceProvider extends ServiceProvider
   {
     $this->app->bindShared('datetimehelper', function()
     {
-      return new DateTime;
+      return new DateTimeHelper;
     });
   }
 

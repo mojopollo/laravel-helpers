@@ -21,7 +21,7 @@ class FileHelperServiceProvider extends ServiceProvider
   {
     $this->app->bindShared('filehelper', function()
     {
-      return new File;
+      return new FileHelper;
     });
   }
 

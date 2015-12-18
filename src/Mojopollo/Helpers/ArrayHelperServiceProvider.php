@@ -21,7 +21,7 @@ class ArrayHelperServiceProvider extends ServiceProvider
   {
     $this->app->bindShared('arrayhelper', function()
     {
-      return new Arr;
+      return new ArrayHelper;
     });
   }
 
