@@ -21,7 +21,7 @@ class StringHelperServiceProvider extends ServiceProvider
   {
     $this->app->bindShared('stringhelper', function()
     {
-      return new Str;
+      return new StringHelper;
     });
   }
 

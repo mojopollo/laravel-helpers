@@ -3,6 +3,9 @@ Laravel Helpers
 
 ##Changelog
 
+####1.0.7
+* More class naming fixes
+
 ####1.0.6
 * Fixes naming on date time helper service provider
 
