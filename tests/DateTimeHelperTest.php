@@ -35,6 +35,55 @@ class DateTimeHelperTest extends \PHPUnit_Framework_TestCase
   }
 
   /**
+   * Test daysOfWeek()
+   *
+   * @return void
+   */
+  public function testDaysOfWeek()
+  {
+    // These values should pass (be an array)
+    $shouldPass = [
+      'mon,tue,wed,thu,fri,sat,sun',
+      'mon,wed,fri',
+      'sun,mon',
+      'mon',
+    ];
+
+    // Test passable
+    foreach ($shouldPass as $daysOfWeek) {
+
+      // Execute method
+      $result = $this->dateTimeHelper->daysOfWeek($daysOfWeek);
+
+      $this->assertTrue(is_array($result), json_encode([
+        'error' => "Expected result is we get back a array",
+        'result' => $result,
+      ], JSON_UNESCAPED_SLASHES));
+    }
+
+    // These values should NOT pass (be a null)
+    $shouldNotPass = [
+      'mon,tue, wed,thu,fri,sat,sun',
+      'mon,wednesday,fri',
+      'Mon',
+      'M',
+      'm',
+    ];
+
+    // Test not passable
+    foreach ($shouldNotPass as $daysOfWeek) {
+
+      // Execute method
+      $result = $this->dateTimeHelper->daysOfWeek($daysOfWeek);
+
+      $this->assertNull($result, json_encode([
+        'error' => "Expected result is we get back a null",
+        'result' => $result,
+      ], JSON_UNESCAPED_SLASHES));
+    }
+  }
+
+  /**
    * Test range() with daily generation
    *
    * @return void
