@@ -135,26 +135,26 @@ StringHelper::limitByWords('one two three four five six', 3);
 <a id="helper-array"></a>
 ## ArrayHelper
 
-#### randomElement
+#### random
 Get a random element from the array supplied
 
 ```php
-mixed randomElement(array $array)
+mixed random(array $array)
 ```
 ```php
-ArrayHelper::randomElement(['one', 'two', 'three']);
+ArrayHelper::random(['one', 'two', 'three']);
 
 // two
 ```
 
-#### morphArrayKeys
+#### morphKeys
 Will camelize all keys found in a array or multi dimensional array
 
 ```php
-array morphArrayKeys(array $originalArray [, $morphTo = 'camel'])
+array morphKeys(array $originalArray [, $morphTo = 'camel'])
 ```
 ```php
-ArrayHelper::morphArrayKeys([
+ArrayHelper::morphKeys([
   'user' => [
     'first_name' => 'mojo',
     'attributes' => [
