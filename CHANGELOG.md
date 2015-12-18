@@ -3,6 +3,11 @@ Laravel Helpers
 
 ##Changelog
 
+####1.0.8
+* Changes method names for simplicity in ArrayHelper
+* Renames randomElement() to random()
+* Renames morphArrayKeys() to morphKeys()
+
 ####1.0.7
 * More class naming fixes
 

@@ -8,7 +8,7 @@ interface ArrayHelperInterface
    * @param  array $array the source array
    * @return mixed        one of the elements of the array
    */
-  public static function randomElement(Array $array);
+  public static function random(Array $array);
 
   /**
    * Will camelize all keys found in a array or multi dimensional array
@@ -17,7 +17,7 @@ interface ArrayHelperInterface
    * @param  string $morphTo        camel | snake
    * @return array                  the final array with the camielize keys
    */
-  public static function morphArrayKeys($originalArray, $morphTo = 'camel');
+  public static function morphKeys($originalArray, $morphTo = 'camel');
 
   /**
    * Will cast '123' as int, 'true' as the boolean true, etc
