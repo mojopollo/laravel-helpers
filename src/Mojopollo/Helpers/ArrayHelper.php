@@ -11,7 +11,7 @@ class ArrayHelper implements ArrayHelperInterface
    * @param  array $array the source array
    * @return mixed        one of the elements of the array
    */
-  public static function randomElement(Array $array)
+  public static function random(Array $array)
   {
     // Get random index
     $index = rand(0, count($array) - 1);
@@ -27,7 +27,7 @@ class ArrayHelper implements ArrayHelperInterface
    * @param  string $morphTo        camel | snake
    * @return array                  the final array with the camielize keys
    */
-  public static function morphArrayKeys($originalArray, $morphTo = 'camel')
+  public static function morphKeys($originalArray, $morphTo = 'camel')
   {
     // New array with the morphed keys
     $newArray = [];
@@ -37,7 +37,7 @@ class ArrayHelper implements ArrayHelperInterface
 
       // If $value is an array in itself, re-run through this function
       if (is_array($value)) {
-        $value = static::morphArrayKeys($value, $morphTo);
+        $value = static::morphKeys($value, $morphTo);
       }
 
       // Set new key

@@ -35,11 +35,11 @@ class ArrayHelperTest extends \PHPUnit_Framework_TestCase
   }
 
   /**
-   * Test randomElement()
+   * Test random()
    *
    * @return void
    */
-  public function testRandomElement()
+  public function testRandom()
   {
     // Set parameters
     $array = [
@@ -49,7 +49,7 @@ class ArrayHelperTest extends \PHPUnit_Framework_TestCase
     ];
 
     // Execute method
-    $result = $this->arrayHelper->randomElement($array);
+    $result = $this->arrayHelper->random($array);
 
     // Expected result, we get a string back with either of the following values
     $expectedResult = ($result == 'one' || $result == 'two' || $result == 'three');
@@ -59,11 +59,11 @@ class ArrayHelperTest extends \PHPUnit_Framework_TestCase
   }
 
   /**
-   * Test morphArrayKeys() with camel case
+   * Test morphKeys() with camel case
    *
    * @return void
    */
-  public function testMorphArrayKeysWithCamel()
+  public function testMorphKeysWithCamel()
   {
     // Set parameters
     $originalArray = [
@@ -77,7 +77,7 @@ class ArrayHelperTest extends \PHPUnit_Framework_TestCase
     $morphTo = 'camel';
 
     // Execute method
-    $result = $this->arrayHelper->morphArrayKeys($originalArray, $morphTo);
+    $result = $this->arrayHelper->morphKeys($originalArray, $morphTo);
 
     // Expected result
     $expectedInfo = 'Keys should be camelized to firstName and secondKey, regardless of multi dimensional array level';
@@ -109,7 +109,7 @@ class ArrayHelperTest extends \PHPUnit_Framework_TestCase
     $morphTo = 'snake';
 
     // Execute method
-    $result = $this->arrayHelper->morphArrayKeys($originalArray, $morphTo);
+    $result = $this->arrayHelper->morphKeys($originalArray, $morphTo);
 
     // Expected result
     $expectedInfo = 'Keys should be snakecased to first_name and second_key, regardless of multi dimensional array level';
