@@ -3,6 +3,9 @@ Laravel Helpers
 
 ##Changelog
 
+####1.0.9
+* Adds range() method for date time helper class
+
 ####1.0.8
 * Changes method names for simplicity in ArrayHelper
 * Renames randomElement() to random()
