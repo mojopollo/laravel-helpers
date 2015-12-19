@@ -264,6 +264,78 @@ ArrayHelper::sortByPriority($originalArray, $priority);
 <a id="helper-datetime"></a>
 ## DateTimeHelper
 
+#### range
+Generates an array of start and endates for a specified period of time (UTC)
+
+```php
+array range(string $startDate, string $endDate, string $periodDate, string $step = '+1 day', string $daysOfWeek = null, string $daysOfWeekTimeZoneName = null, string $dateFormat = 'Y-m-d H:i:s')
+```
+
+```php
+$startDate = '2015-06-04 08:00:00';
+$endDate = '2015-06-04 12:00:00';
+$periodDate = '2015-06-06 12:00:00';
+$step = '+1 day';
+$daysOfWeek = null;
+$daysOfWeekTimeZoneName = null;
+$dateFormat = 'Y-m-d H:i:s';
+
+DateTimeHelper::range($startDate, $endDate, $periodDate, $step, $daysOfWeek, $daysOfWeekTimeZoneName, $dateFormat);
+
+// [
+//   [
+//     'start' => '2015-06-04 08:00:00',
+//     'end' => '2015-06-04 12:00:00',
+//   ],
+//   [
+//     'start' => '2015-06-05 08:00:00',
+//     'end' => '2015-06-05 12:00:00',
+//   ],
+//   [
+//     'start' => '2015-06-06 08:00:00',
+//     'end' => '2015-06-06 12:00:00',
+//   ],
+// ]
+```
+
+```php
+$startDate = '2015-09-23 10:11:51';
+$endDate = '2015-09-24 02:55:51';
+$periodDate = '2015-09-30 11:59:59';
+$step = '+1 week';
+$daysOfWeek = 'mon,wed,fri';
+$daysOfWeekTimeZoneName = null;
+$dateFormat = 'Y-m-d H:i:s';
+
+DateTimeHelper::range($startDate, $endDate, $periodDate, $step, $daysOfWeek, $daysOfWeekTimeZoneName, $dateFormat);
+
+// [
+//   [
+//     'start' => '2015-09-21 10:11:51',
+//     'end' => '2015-09-22 02:55:51',
+//   ],
+//   [
+//     'start' => '2015-09-23 10:11:51',
+//     'end' => '2015-09-24 02:55:51',
+//   ],
+//   [
+//     'start' => '2015-09-25 10:11:51',
+//     'end' => '2015-09-26 02:55:51',
+//   ],
+//   [
+//     'start' => '2015-09-28 10:11:51',
+//     'end' => '2015-09-29 02:55:51',
+//   ],
+//   [
+//     'start' => '2015-09-30 10:11:51',
+//     'end' => '2015-10-01 02:55:51',
+//   ],
+//   [
+//     'start' => '2015-10-02 10:11:51',
+//     'end' => '2015-10-03 02:55:51',
+//   ],
+// ];
+```
 
 <a id="helper-file"></a>
 ## FileHelper
