@@ -141,7 +141,7 @@ class DateTimeHelperTest extends \PHPUnit_Framework_TestCase
 
     // Execute method
     $result = $this->dateTimeHelper->range($startDate, $endDate, $periodDate, $step, $daysOfWeek, $daysOfWeekTimeZoneName, $dateFormat);
-    fwrite(STDERR, print_r($result, true));
+    // fwrite(STDERR, print_r($result, true));
 
     // Expected array
     $expectedResults = [
