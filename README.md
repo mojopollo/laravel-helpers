@@ -199,7 +199,7 @@ ArrayHelper::castValues([
 Re-orders an array by moving elements to the top of the array based on a pre-defined array stating which elements to move to top of array
 
 ```php
-array sortByPriority(array $originalArray, array $priority)
+array sortByPriority(array $originalArray, array $priority [, $exactMatch = true])
 ```
 ```php
 $originalArray = [

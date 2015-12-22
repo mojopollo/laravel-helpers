@@ -105,11 +105,12 @@ class ArrayHelper implements ArrayHelperInterface
    * Re-orders an array by moving elements to the top of the array based
    * on a pre-defined array stating which elements to move to top of array
    *
-   * @param  Array  $originalArray The array thats to be re-ordered
-   * @param  Array  $priority      The array that contains which
-   * @return Array                 The final re-ordered array
+   * @param  array   $originalArray The array thats to be re-ordered
+   * @param  array   $priority      The array that contains which
+   * @param  boolean $exactMatch    When set to false will match both array keys and values without case sensitivity or type matching
+   * @return array                  The final re-ordered array
    */
-  public static function sortByPriority(Array $originalArray, Array $priority)
+  public static function sortByPriority(Array $originalArray, Array $priority, $exactMatch = true)
   {
     // The priority array
     $priorityArray = [];
@@ -126,14 +127,21 @@ class ArrayHelper implements ArrayHelperInterface
           // Get original key and valye
           foreach ($originalElement as $originalKey => $originalValue) {
 
+            // Exact match
             // If keys and values match exactly
-            if ($priorityKey === $originalKey && $priorityValue === $originalValue) {
+            if ($exactMatch && $priorityKey === $originalKey && $priorityValue === $originalValue) {
 
               // Add to priority array
               $priorityArray[] = $originalElement;
 
               // Unset this element from original array
               unset($originalArray[$originalElementKey]);
+            }
+
+            // "Loose" match
+            // If keys and values match without taking type into account or case sensitivity
+            if ($exactMatch === false && $priorityKey === $originalKey && $priorityValue === $originalValue) {
+
             }
           }
         }

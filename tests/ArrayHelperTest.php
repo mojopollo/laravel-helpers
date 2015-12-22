@@ -224,4 +224,63 @@ class ArrayHelperTest extends \PHPUnit_Framework_TestCase
     $this->assertEquals($result, $expectedArray);
   }
 
+  /**
+   * Test sortByPriority() with loose natch
+   *
+   * @return void
+   */
+  public function testSortByPriorityWithLooseMatch()
+  {
+    // Original array
+    $originalArray = [
+      [
+        'name' => 'Mojo Burger',
+        'city' => 'Sherman Oaks',
+        'zip' => '91403',
+      ],
+      [
+        'name' => 'White Castle',
+        'city' => 'Las Vegas',
+        'zip' => 89109,
+      ],
+      [
+        'name' => 'White Castle',
+        'city' => 'las vegas',
+        'zip' => '89109',
+      ],
+    ];
+
+    // Priority array
+    $priority = [
+      [
+        'city' => 'las vegas'
+      ],
+    ];
+
+    // Execute method
+    $result = $this->arrayHelper->sortByPriority($originalArray, $priority, false);
+
+    // Expected result
+    $expectedArray = [
+      [
+        'name' => 'White Castle',
+        'city' => 'Las Vegas',
+        'zip' => 89109,
+      ],
+      [
+        'name' => 'White Castle',
+        'city' => 'las vegas',
+        'zip' => '89109',
+      ],
+      [
+        'name' => 'Mojo Burger',
+        'city' => 'Sherman Oaks',
+        'zip' => '91403',
+      ],
+    ];
+
+    // Check result
+    $this->assertEquals($result, $expectedArray);
+  }
+
 }
