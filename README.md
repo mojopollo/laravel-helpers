@@ -196,10 +196,11 @@ ArrayHelper::castValues([
 ```
 
 #### sortByPriority
-Re-orders an array by moving elements to the top of the array based on a pre-defined array stating which elements to move to top of array
+Re-orders an array by moving elements to the top of the array based on a pre-defined array stating which elements to move to top of array.
+Note: when $strictMatch is set to false, the match will not take into account type and case sensitivity
 
 ```php
-array sortByPriority(array $originalArray, array $priority)
+array sortByPriority(array $originalArray, array $priority [, $strictMatch = true])
 ```
 ```php
 $originalArray = [
