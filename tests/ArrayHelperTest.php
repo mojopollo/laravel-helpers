@@ -258,7 +258,8 @@ class ArrayHelperTest extends \PHPUnit_Framework_TestCase
     ];
 
     // Execute method
-    $result = $this->arrayHelper->sortByPriority($originalArray, $priority, false);
+    $result = $this->arrayHelper->sortByPriority($originalArray, $priority, $exactMatch = false);
+    // fwrite(STDERR, print_r($result, true));
 
     // Expected result
     $expectedArray = [
