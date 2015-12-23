@@ -3,6 +3,9 @@ Laravel Helpers
 
 ##Changelog
 
+####1.0.10
+* Adds exactMatch boolean option for ArrayHelper::sortByPriority that allows strict matching to be disabled
+
 ####1.0.9
 * Adds range() method for date time helper class
 
