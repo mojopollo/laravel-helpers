@@ -60,11 +60,10 @@ class DateTimeHelper implements DateTimeHelperInterface
    * @param  string $periodDate              example: keep generating these dates until 2015-08-01 12:00:00
    * @param  string $step                    example: +2 days in the period, +1 week, +2 week
    * @param  string $daysOfWeek              example: mon,tues,wed,thu,fri,sat,sun      mon,wed,fri
-   * @param  string $daysOfWeekTimeZoneName  example: null or anything other than "UTC", for example "America/Los_Angeles", this is so we can convert mon, tues, wed, etc into its correct variation in UTC time
    * @param  string $dateFormat              example: Y-m-d
    * @return array                           Final array with collection of start and end dates
    */
-  public function range($startDate, $endDate, $periodDate, $step = '+1 day', $daysOfWeek = null, $daysOfWeekTimeZoneName = null, $dateFormat = 'Y-m-d H:i:s')
+  public function range($startDate, $endDate, $periodDate, $step = '+1 day', $daysOfWeek = null, $dateFormat = 'Y-m-d H:i:s')
   {
     // Date array
     $dates = [];
@@ -88,21 +87,8 @@ class DateTimeHelper implements DateTimeHelperInterface
         // For every day of the week specified
         foreach ($daysOfWeek as $dayOfWeek) {
 
-          // If we do not need to convert the days of the week
-          if ($daysOfWeekTimeZoneName === null || $daysOfWeekTimeZoneName === 'UTC') {
-
-            // Set day of week start time
-            $dayOfWeekStartTime = strtotime("{$dayOfWeek} this week " . date('Y-m-d H:i:s', $currentDate));
-
-          // Otherwise, adjust $dayOfWeekStartTime if we have $daysOfWeekTimeZoneName
-          } else {
-
-            // Set day of week start time in this time zone
-            $dayOfWeekStartTimeInDifferentTimeZone = strtotime("{$dayOfWeek} this week " . static::setTimeZone(date('Y-m-d H:i:s', $currentDate), $daysOfWeekTimeZoneName));
-
-            // Convert backk to UTC time
-            $dayOfWeekStartTime = strtotime(static::convertToUtc(date('Y-m-d H:i:s', $dayOfWeekStartTimeInDifferentTimeZone), $daysOfWeekTimeZoneName));
-          }
+          // Set day of week start time
+          $dayOfWeekStartTime = strtotime("{$dayOfWeek} this week " . date('Y-m-d H:i:s', $currentDate));
 
           // Set day of week end time
           $dayOfWeekEndTime = strtotime(date('Y-m-d H:i:s', $dayOfWeekStartTime + $endDateDifference));
