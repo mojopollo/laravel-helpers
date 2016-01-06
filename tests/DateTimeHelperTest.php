@@ -96,11 +96,10 @@ class DateTimeHelperTest extends \PHPUnit_Framework_TestCase
     $periodDate = '2015-06-06 12:00:00';
     $step = '+1 day';
     $daysOfWeek = null;
-    $daysOfWeekTimeZoneName = null;
     $dateFormat = 'Y-m-d H:i:s';
 
     // Execute method
-    $result = $this->dateTimeHelper->range($startDate, $endDate, $periodDate, $step, $daysOfWeek, $daysOfWeekTimeZoneName, $dateFormat);
+    $result = $this->dateTimeHelper->range($startDate, $endDate, $periodDate, $step, $daysOfWeek, $dateFormat);
     // fwrite(STDERR, print_r($result, true));
 
     // Expected array
@@ -136,11 +135,10 @@ class DateTimeHelperTest extends \PHPUnit_Framework_TestCase
     $periodDate = '2015-09-04 08:00:00';
     $step = '+1 month';
     $daysOfWeek = null;
-    $daysOfWeekTimeZoneName = null;
     $dateFormat = 'Y-m-d H:i:s';
 
     // Execute method
-    $result = $this->dateTimeHelper->range($startDate, $endDate, $periodDate, $step, $daysOfWeek, $daysOfWeekTimeZoneName, $dateFormat);
+    $result = $this->dateTimeHelper->range($startDate, $endDate, $periodDate, $step, $daysOfWeek, $dateFormat);
     // fwrite(STDERR, print_r($result, true));
 
     // Expected array
@@ -180,11 +178,10 @@ class DateTimeHelperTest extends \PHPUnit_Framework_TestCase
     $periodDate = '2015-09-30 11:59:59';
     $step = '+1 week';
     $daysOfWeek = 'mon,wed,fri';
-    $daysOfWeekTimeZoneName = null;
     $dateFormat = 'Y-m-d H:i:s';
 
     // Execute method
-    $result = $this->dateTimeHelper->range($startDate, $endDate, $periodDate, $step, $daysOfWeek, $daysOfWeekTimeZoneName, $dateFormat);
+    $result = $this->dateTimeHelper->range($startDate, $endDate, $periodDate, $step, $daysOfWeek, $dateFormat);
     // fwrite(STDERR, print_r($result, true));
 
     // Check: there should be a total of 6 total records created
