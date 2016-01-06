@@ -20,10 +20,9 @@ interface DateTimeHelperInterface
    * @param  string $periodDate              example: keep generating these dates until 2015-08-01 12:00:00
    * @param  string $step                    example: +2 days in the period, +1 week, +2 week
    * @param  string $daysOfWeek              example: mon,tues,wed,thu,fri,sat,sun      mon,wed,fri
-   * @param  string $daysOfWeekTimeZoneName  example: null or anything other than "UTC", for example "America/Los_Angeles", this is so we can convert mon, tues, wed, etc into its correct variation in UTC time
    * @param  string $dateFormat              example: Y-m-d
    * @return array                           Final array with collection of start and end dates
    */
-  public function range($startDate, $endDate, $periodDate, $step = '+1 day', $daysOfWeek = null, $daysOfWeekTimeZoneName = null, $dateFormat = 'Y-m-d H:i:s');
+  public function range($startDate, $endDate, $periodDate, $step = '+1 day', $daysOfWeek = null, $dateFormat = 'Y-m-d H:i:s');
 
 }

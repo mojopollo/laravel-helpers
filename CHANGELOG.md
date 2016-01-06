@@ -3,6 +3,9 @@ Laravel Helpers
 
 ##Changelog
 
+####1.0.11
+* Updates range() method in date time helper, removes timezone name parameter
+
 ####1.0.10
 * Adds exactMatch boolean option for ArrayHelper::sortByPriority that allows strict matching to be disabled
 
