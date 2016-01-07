@@ -3,6 +3,9 @@ Laravel Helpers
 
 ##Changelog
 
+####1.0.12
+* Updates docs
+
 ####1.0.11
 * Updates range() method in date time helper, removes timezone name parameter
 
