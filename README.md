@@ -269,7 +269,7 @@ ArrayHelper::sortByPriority($originalArray, $priority);
 Generates an array of start and endates for a specified period of time (UTC)
 
 ```php
-array range(string $startDate, string $endDate, string $periodDate, string $step = '+1 day', string $daysOfWeek = null, string $daysOfWeekTimeZoneName = null, string $dateFormat = 'Y-m-d H:i:s')
+array range(string $startDate, string $endDate, string $periodDate, string $step = '+1 day', string $daysOfWeek = null, string $dateFormat = 'Y-m-d H:i:s')
 ```
 
 ```php
@@ -278,10 +278,9 @@ $endDate = '2015-06-04 12:00:00';
 $periodDate = '2015-06-06 12:00:00';
 $step = '+1 day';
 $daysOfWeek = null;
-$daysOfWeekTimeZoneName = null;
 $dateFormat = 'Y-m-d H:i:s';
 
-DateTimeHelper::range($startDate, $endDate, $periodDate, $step, $daysOfWeek, $daysOfWeekTimeZoneName, $dateFormat);
+DateTimeHelper::range($startDate, $endDate, $periodDate, $step, $daysOfWeek, $dateFormat);
 
 // [
 //   [
@@ -305,10 +304,9 @@ $endDate = '2015-09-24 02:55:51';
 $periodDate = '2015-09-30 11:59:59';
 $step = '+1 week';
 $daysOfWeek = 'mon,wed,fri';
-$daysOfWeekTimeZoneName = null;
 $dateFormat = 'Y-m-d H:i:s';
 
-DateTimeHelper::range($startDate, $endDate, $periodDate, $step, $daysOfWeek, $daysOfWeekTimeZoneName, $dateFormat);
+DateTimeHelper::range($startDate, $endDate, $periodDate, $step, $daysOfWeek, $dateFormat);
 
 // [
 //   [
